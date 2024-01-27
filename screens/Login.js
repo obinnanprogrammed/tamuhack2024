@@ -9,7 +9,11 @@ import PalmTree from '../components/PalmTree';
 export default function Login() {
     return (
         <View style={styles.container}>
-            <PalmTree imgSource={require('../assets/palm2.png')} />
+            <PalmTree imgSource={require('../assets/palm2.png')}children={(
+                <View style={styles.centeredItems}>
+                    <Text style = {styles.welcomeText} >Welcome</Text>
+                </View>
+            )}/>
         </View>
     )
 }
