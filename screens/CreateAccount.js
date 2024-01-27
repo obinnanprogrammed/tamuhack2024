@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Alert, Text, View, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
+import PalmTree from '../components/PalmTree';
+import { useNavigation } from '@react-navigation/native';
+import BlueButton from '../components/BlueButton';
 
 export default function CreateAccount() {
     return (

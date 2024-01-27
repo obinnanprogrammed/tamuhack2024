@@ -44,7 +44,7 @@ export default function Login() {
             <BlueButton
               onPress={handleButtonPress}
               title="Primary Layer"
-              secondaryTitle="Get Started"
+              secondaryTitle="Login"
               style={styles.centeredButton}
             />
             </View>
