@@ -9,9 +9,9 @@ import PalmTree from '../components/PalmTree';
 export default function Welcome() {
     return (
         <View style={styles.container}>
-            <PalmTree children={(
+            <PalmTree imgSource={'../assets/palm.png'} children={(
                 <View style={styles.centeredItems}>
-                    <Text style = {styles.welcomeText} >Welcome</Text>
+                    <Text style = {styles.welcomeText}>Welcome</Text>
                 </View>
             )} />
         </View>

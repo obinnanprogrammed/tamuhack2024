@@ -1,9 +1,9 @@
 import palm from '../assets/palm.png'
 import { ImageBackground, View, Text} from 'react-native';
 
-const PalmTree = ({ children }) => {
+const PalmTree = ({ children, imgSource }) => {
   return (
-    <ImageBackground source={palm} style={{
+    <ImageBackground source={imgSource} style={{
       opacity: 1,
       width: '100%',
       height: '100%',
