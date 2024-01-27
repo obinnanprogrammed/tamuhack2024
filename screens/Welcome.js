@@ -4,11 +4,34 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PalmTree from '../components/PalmTree';
 
 export default function Welcome() {
     return (
-        <View>
-            <Text>FIXME: create welcome page</Text>
+        <View style={styles.container}>
+            <PalmTree children={(
+                <View style={styles.centeredItems}>
+                    <Text style = {styles.welcomeText} >Welcome</Text>
+                </View>
+            )} />
         </View>
     )
 }
+const styles = StyleSheet.create({
+    container: {
+      flex:1,
+      backgroundColor: '#23c6cb', // Change this color to your desired background color
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    centeredItems:{
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    welcomeText:{
+        marginTop: 200,
+        color: '#ffffff',
+        fontSize: 40,
+        fontWeight: 'bold',
+    },
+  });
