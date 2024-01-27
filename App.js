@@ -19,7 +19,7 @@ export default function App() {
       <StatusBar style="auto" />
     </View> */
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
