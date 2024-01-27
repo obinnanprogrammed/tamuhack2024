@@ -5,13 +5,25 @@ import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PalmTree from '../components/PalmTree';
+import TwoLayerButton from '../components/Button';
 
 export default function Welcome() {
+    const handleButtonPress = () => {
+        // Your button press logic goes here
+        console.log('Button pressed!');
+    };
     return (
         <View style={styles.container}>
             <PalmTree children={(
                 <View style={styles.centeredItems}>
                     <Text style = {styles.welcomeText} >Welcome</Text>
+                    <View style={styles.button}>
+                        <TwoLayerButton
+                            onPress={handleButtonPress}
+                            title="Primary Layer"
+                            secondaryTitle="Get Started"
+                        />
+                    </View>
                 </View>
             )} />
         </View>
@@ -28,10 +40,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    button:{
+        marginTop:15
+    },
     welcomeText:{
         marginTop: 200,
         color: '#ffffff',
-        fontSize: 40,
+        fontSize: 64,
         fontWeight: 'bold',
     },
   });
