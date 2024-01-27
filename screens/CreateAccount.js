@@ -8,7 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function CreateAccount() {
     return (
         <View>
-            <Text>FIXME: create account creation</Text>
+            <Text>FIXME: create account creation hehe</Text>
         </View>
     )
 }
