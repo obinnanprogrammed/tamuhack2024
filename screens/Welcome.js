@@ -6,11 +6,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PalmTree from '../components/PalmTree';
 import TwoLayerButton from '../components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Welcome() {
+    const navigation = useNavigation(); 
     const handleButtonPress = () => {
         // Your button press logic goes here
         console.log('Button pressed!');
+        navigation.navigate('Login')
     };
     return (
         <View style={styles.container}>
