@@ -17,7 +17,7 @@ export default function Welcome() {
     };
     return (
         <View style={styles.container}>
-            <PalmTree imgSource={'../assets/palm.png'} children={(
+            <PalmTree imgSource={require('../assets/palm.png')} children={(
                 <View style={styles.centeredItems}>
                     <Text style = {styles.welcomeText} >Welcome</Text>
                     <View style={styles.button}>
