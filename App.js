@@ -5,6 +5,8 @@ import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Swipeable } from 'react-native-gesture-handler/Swipeable';
+import Welcome from 'screens/Welcome.js';
+import Login from 'screens/Login.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +19,7 @@ export default function App() {
     </View> */
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={}></Stack.Screen>
+        <Stack.Screen name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen name="Login" component={Login}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
