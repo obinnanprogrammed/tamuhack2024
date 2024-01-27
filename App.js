@@ -6,6 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Swipeable } from 'react-native-gesture-handler/Swipeable';
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
     <View style={styles.container}>
