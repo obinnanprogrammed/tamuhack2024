@@ -10,10 +10,17 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    /*
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-    </View>
+    </View> */
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Welcome" component={}></Stack.Screen>
+        <Stack.Screen name="Login" component={Login}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
