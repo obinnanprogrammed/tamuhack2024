@@ -13,7 +13,7 @@ export default function Welcome() {
     const handleButtonPress = () => {
         // Your button press logic goes here
         console.log('Button pressed!');
-        navigation.navigate('Login')
+        navigation.navigate('Login');
     };
     return (
         <View style={styles.container}>
