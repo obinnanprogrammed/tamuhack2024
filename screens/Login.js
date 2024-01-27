@@ -7,8 +7,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function Login() {
     return (
-        <View>
-            <Text>FIXME: create login</Text>
+        <View style={styles.container}>
+            <PalmTree imgSource={require('../assets/palm2.png')}children={(
+                <View style={styles.centeredItems}>
+                    <Text style = {styles.welcomeText} >Welcome</Text>
+                </View>
+            )}/>
         </View>
     )
 }
