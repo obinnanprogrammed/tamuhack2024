@@ -1,9 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Alert, Text, View, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import PalmTree from '../components/PalmTree';
 import TwoLayerButton from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
@@ -27,6 +23,7 @@ export default function Welcome() {
                             secondaryTitle="Get Started"
                         />
                     </View>
+                    <Image style={styles.image} source={require("../assets/logo.png")} />
                 </View>
             )} />
         </View>
@@ -47,9 +44,21 @@ const styles = StyleSheet.create({
         marginTop:15
     },
     welcomeText:{
-        marginTop: 200,
+        marginTop: 150,
         color: '#ffffff',
         fontSize: 64,
         fontWeight: 'bold',
     },
+
+    image: {
+        marginTop: 100,
+        width: 200,
+        height: 300,
+        resizeMode: "contain",
+        shadowOpacity: 0.4,
+        shadowOffset: {
+            width: 0,
+            height: 0
+        }
+    }
   });

@@ -56,11 +56,13 @@ export default function StudentORecruiter() {
                     onPress={() => setSelected(2)}
                   ></PromptButton>
                 </View>
-                <BlueButton
-                  secondaryTitle="Next"
-                  onPress={() => submitUserType()}
-                  off={selected == 0}
-                ></BlueButton>
+                <View style={{marginTop: 40}}>
+                  <BlueButton
+                    secondaryTitle={selected == 0 ? "Select a Role" : "Next"}
+                    onPress={() => submitUserType()}
+                    off={selected == 0}
+                  ></BlueButton>
+                </View>
               </View>
             </View>
           }
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    marginTop: 50,
+    marginTop: 100,
     paddingHorizontal: 20,
     color: "#000",
     fontSize: 40,
