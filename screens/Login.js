@@ -63,7 +63,7 @@ export default function Login() {
                     />
                   </View>
                   <View>
-                    <View style={{ marginTop: 20, alignItems: "center" }}>
+                    <View style={{ marginTop: -20, alignItems: "center" }}>
                       <BlueButton
                         onPress={handleButtonPress}
                         title="Primary Layer"
@@ -110,8 +110,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#F0F6E8",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    height: "45%",
+    height: "50%",
     alignItems: "center",
+    shadowOpacity: 0.2,
+    shadowColor: "black",
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: -2
+    }
   },
   input: {
     height: 40,
@@ -121,7 +128,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   centeredButton: {
-    marginTop: 40,
+    marginTop: 20,
     alignItems: "center",
     justifyContent: "center",
   },
