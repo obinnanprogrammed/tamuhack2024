@@ -4,6 +4,10 @@
 // import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
+import PalmTree from "../components/PalmTree";
+import { LinearGradient } from "expo-linear-gradient";
 
 // export default function Chat() {
 //     return (
@@ -13,8 +17,7 @@
 //     )
 // }
 
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
+
 
 export default function Chat() {
   const [messages, setMessages] = useState([]);
@@ -35,10 +38,8 @@ export default function Chat() {
         <PalmTree
           style={styles.centeredItems}
           imgSource={require("../assets/palm.png")}
-        />
-      </LinearGradient>
-  
-      <View style={styles.container}>
+          children={
+            <View style={styles.container}>
         <FlatList
           data={messages}
           keyExtractor={(item, index) => index.toString()}
@@ -59,6 +60,9 @@ export default function Chat() {
           <Button title="Send" onPress={handleSendMessage} />
         </View>
       </View>
+          }
+        />
+      </LinearGradient>
     </View>
   );
 }  
@@ -66,8 +70,8 @@ export default function Chat() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-    paddingTop: 40,
+    padding: 20,
+    paddingTop: 70,
   },
   userMessage: {
     alignSelf: 'flex-end',
