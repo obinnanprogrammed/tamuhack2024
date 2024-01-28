@@ -24,10 +24,10 @@ export default function RecCompany() {
           children={
             <View style={styles.wide}>
               <BackNavBar
-                onPress={() => navigation.navigate("Student/Recruiter")}
+                onPress={() => navigation.navigate("Recruiter Company")}
               ></BackNavBar>
               <View style={styles.centeredItems}>
-                <Text style={styles.text}>What college do you attend?</Text>
+                <Text style={styles.text}>What company do you recurit for?</Text>
                 <PromptButton
                   title="Student"
                   style={{ marginTop: 50 }}
