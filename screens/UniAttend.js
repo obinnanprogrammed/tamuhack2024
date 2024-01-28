@@ -1,11 +1,11 @@
 import * as React from "react";
-import { StyleSheet, Alert, Text, View, Button } from "react-native";
+import { StyleSheet, Alert, Text, View, Button, TextInput, TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import PalmTree from "../components/PalmTree";
 import { LinearGradient } from "expo-linear-gradient";
 import BackNavBar from "../components/BackNavBar";
-import InputField from "../components/InputField";
 import BlueButton from "../components/BlueButton";
+import { Keyboard } from "react-native";
 
 export default function UniAttend() {
   const navigation = useNavigation();
@@ -17,16 +17,36 @@ export default function UniAttend() {
           style={styles.centeredItems}
           imgSource={require("../assets/palm.png")}
           children={
-            <View style={styles.wide}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+              <View style={styles.wide}>
               <BackNavBar
                 onPress={() => navigation.navigate("Student/Recruiter")}
               ></BackNavBar>
               <View style={styles.centeredItems}>
                 <Text style={styles.text}>What college do you attend?</Text>
-                <InputField></InputField>
-                <BlueButton secondaryTitle="Next" onPress={() => navigation.navigate("Student University")}></BlueButton>
+                <TextInput
+                  placeholder={"Type in your university"}
+                  style={[
+                    {
+                      borderColor: "black",
+                      borderBottomWidth: 1,
+                      paddingBottom: 10,
+                      marginBottom: 90,
+                      fontSize: 20,
+                      width: 300,
+                      textAlign: "center",
+                    },
+                  ]}
+                />
+                <View style={{ paddingTop: 40 }}>
+                  <BlueButton
+                    secondaryTitle="Next"
+                    onPress={() => navigation.navigate("Student Grad Date")}
+                  ></BlueButton>
+                </View>
               </View>
             </View>
+            </TouchableWithoutFeedback>
           }
         />
       </LinearGradient>
