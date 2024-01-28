@@ -43,6 +43,7 @@ export default function MessagesHome() {
                 data={data}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
+                style={styles.shadow}
               />
               <BottomNavBar />
             </View>
@@ -79,7 +80,6 @@ const styles = StyleSheet.create({
 
   bottomBorder: {
     borderBottomWidth: 1,
-    marginBottom: 40
   },
 
   text: {
@@ -125,4 +125,13 @@ const styles = StyleSheet.create({
   message: {
     fontSize: 16,
   },
+
+  shadow: {
+    paddingTop: 40,
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      width: 0,
+      height: 4
+    }
+  }
 });

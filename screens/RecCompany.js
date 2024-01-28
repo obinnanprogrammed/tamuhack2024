@@ -15,6 +15,9 @@ import {TextInput } from "react-native";
 
 export default function RecCom() {
   const navigation = useNavigation();
+  const handleInput = () => {
+    navigation.navigate("Recruiter Skills");
+  };
 
   return (
     <View style={styles.component}>
@@ -38,7 +41,7 @@ export default function RecCom() {
                   textAlign: "center",
         
                 }]} />
-                <BlueButton secondaryTitle="Next" onPress={() => navigation.navigate("Recruiter Company")}></BlueButton>
+                <BlueButton secondaryTitle="Next" onPress={() => handleInput()}></BlueButton>
               </View>
             </View>
           }

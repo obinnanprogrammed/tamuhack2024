@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function BlueButton({ onPress, title, secondaryTitle, off=false}) {
+export default function BlueButton({ onPress, secondaryTitle, off=false}) {
   return (
     <TouchableOpacity onPress={onPress} disabled={off}>
       <View style={styles.outerContainer}>
