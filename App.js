@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -27,7 +25,11 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
+<<<<<<< HEAD
       <Stack.Navigator initialRouteName="Profile">
+=======
+      <Stack.Navigator initialRouteName="Student Pic Upload">
+>>>>>>> cbe5773950588d4da3c1ab258aee4f8d20a7a435
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
@@ -40,6 +42,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="Student Experience" component={StuExp}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Grad Date" component={StuGrad}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Skills" component={StuSkill}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student Interests" component={StuInterests}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Pic Upload" component={StuPic}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student University" component={UniAttend}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Recruiter Company" component={RecCompany}></Stack.Screen>

@@ -16,6 +16,8 @@ export default function StuExp() {
 
   // THESE ARE TESTS ARRAYS, IMPLEMENT DATABASE PLS <3
   const [languages, setLanguages] = useState(["C++", "Java", "Python", "C#", "HTML", "CSS", "JavaScript", "C"])
+  const [libraries, setLibraries] = useState(["Selenium", "Node", "React", "Test", "Test2", "Long Test"])
+  const [devTools, setDevTools] = useState(["Atom", "GitHub", "Foundation", "Bootcamp", "Visual Studio Code", "Docker"])
   
   return (
     <View style={styles.component}>
@@ -31,7 +33,9 @@ export default function StuExp() {
               <View style={styles.centeredItems}>
                 <Text style={styles.text}>Skills</Text>
 
-                <MultiSelect list={languages} setList={setLanguages}></MultiSelect>
+                <MultiSelect name="Coding Languages" list={languages} setList={setLanguages}></MultiSelect>
+                <MultiSelect name="Libraries and Frameworks" list={libraries} setList={setLibraries}></MultiSelect>
+                <MultiSelect name="Developer Tools" list={devTools} setList={setDevTools}></MultiSelect>
 
                 <View style={{ paddingTop: 40 }}>
                   <BlueButton
