@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Swipeable } from 'react-native-gesture-handler/Swipeable';
 import firebase from "./firebase";
 import { Chat, CreateAccount, Home, Login, Messages, Profile, RecCompany, 
-  RecInternship, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
+  RecInternship, RecHome, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
   StuPic, StuSkill, UniAttend, Welcome } from './screens';
 import Notifications from './screens/Notifications';
 
