@@ -2,6 +2,8 @@ import * as React from "react";
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import PalmTree from "../components/PalmTree";
+// import { useNavigation } from '@react-navigation/native';
+// import { TouchableOpacity } from 'react-native';
 
 export default function MessagesHome() {
   const data = [
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     borderRadius: 10, // Set border radius to make square bubbles
-    backgroundColor: "#e0e0e0", // Set background color for bubbles
+    backgroundColor: "#9adbdf", // Set background color for bubbles
     marginBottom: 10,
   },
 

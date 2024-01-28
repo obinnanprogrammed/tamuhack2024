@@ -1,27 +1,39 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, Text } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 const BottomNavBar = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.iconButton}>
+      <TouchableOpacity
+        style={styles.iconButton}
+        onPress={() => navigation.navigate('Messages')}>
         <Image
           source={require('../assets/chat.png')} // Replace with your icon path
           style={styles.icon}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconButton}>
+
+      <TouchableOpacity
+        style={styles.iconButton}
+        onPress={() => navigation.navigate('Home')}>
         <Image
           source={require('../assets/home.png')} // Replace with your icon path
           style={styles.icon}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconButton}>
+
+      <TouchableOpacity
+        style={styles.iconButton}
+        onPress={() => navigation.navigate('Profile')}>
         <Image
           source={require('../assets/user.png')} // Replace with your icon path
           style={styles.icon}
         />
       </TouchableOpacity>
+
       {/* Add more icons as needed */}
     </View>
   );
@@ -48,6 +60,9 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     // Style your icon as needed
+  },
+  iconText: {
+    color: 'white',
   },
 });
 
