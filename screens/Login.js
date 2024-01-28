@@ -111,14 +111,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
     height: "50%",
-    alignItems: "center",
-    shadowOpacity: 0.2,
-    shadowColor: "black",
-    shadowRadius: 4,
-    shadowOffset: {
-      width: 0,
-      height: -2
-    }
+    alignItems: "center"
   },
   input: {
     height: 40,
