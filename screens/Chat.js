@@ -28,30 +28,40 @@ export default function Chat() {
     }
   };
 
+  
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={messages}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <View style={item.sender === 'user' ? styles.userMessage : styles.otherMessage}>
-            <Text>{item.text}</Text>
-          </View>
-        )}
-      />
-
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Type a message..."
-          value={newMessage}
-          onChangeText={(text) => setNewMessage(text)}
+    <View style={styles.component}>
+      <LinearGradient style={styles.gradient} colors={["#F0F6E8", "#F2DDC3"]}>
+        <PalmTree
+          style={styles.centeredItems}
+          imgSource={require("../assets/palm.png")}
         />
-        <Button title="Send" onPress={handleSendMessage} />
+      </LinearGradient>
+  
+      <View style={styles.container}>
+        <FlatList
+          data={messages}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <View style={item.sender === 'user' ? styles.userMessage : styles.otherMessage}>
+              <Text>{item.text}</Text>
+            </View>
+          )}
+        />
+  
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Type a message..."
+            value={newMessage}
+            onChangeText={(text) => setNewMessage(text)}
+          />
+          <Button title="Send" onPress={handleSendMessage} />
+        </View>
       </View>
     </View>
   );
-}
+}  
 
 const styles = StyleSheet.create({
   container: {
@@ -86,5 +96,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 8,
-  },
+  }
 });
