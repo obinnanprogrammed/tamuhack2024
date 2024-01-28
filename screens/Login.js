@@ -17,13 +17,11 @@ export default function Login() {
   const navigation = useNavigation();
   const handleButtonPress = () => {
     // Your button press logic goes here
-    console.log("Button pressed!");
-    navigation.navigate("Home");
+    navigation.navigate('Home');
   };
   const handleToSignupPress = () => {
     // Your button press logic goes here
-    console.log("Button pressed!");
-    navigation.navigate("Create Account");
+      navigation.navigate('Create Account');
   };
   return (
     <View style={styles.container}>
