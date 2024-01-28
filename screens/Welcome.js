@@ -15,6 +15,7 @@ export default function Welcome() {
         <View style={styles.container}>
             <PalmTree imgSource={require('../assets/palm.png')} children={(
                 <View style={styles.centeredItems}>
+                    <Image style={styles.image} source={require("../assets/logo-shadow.png")} />
                     <Text style = {styles.welcomeText} >Welcome</Text>
                     <View style={styles.button}>
                         <TwoLayerButton
@@ -23,7 +24,6 @@ export default function Welcome() {
                             secondaryTitle="Get Started"
                         />
                     </View>
-                    <Image style={styles.image} source={require("../assets/logo.png")} />
                 </View>
             )} />
         </View>
@@ -44,21 +44,20 @@ const styles = StyleSheet.create({
         marginTop:15
     },
     welcomeText:{
-        marginTop: 150,
         color: '#ffffff',
         fontSize: 64,
         fontWeight: 'bold',
     },
 
     image: {
-        marginTop: 100,
-        width: 200,
-        height: 300,
+        width: 150,
+        height: 200,
         resizeMode: "contain",
+        marginTop: 50,
         shadowOpacity: 0.4,
         shadowOffset: {
             width: 0,
             height: 0
-        }
+        },
     }
   });
