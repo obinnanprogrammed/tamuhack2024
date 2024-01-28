@@ -7,7 +7,7 @@ import {
   Animated,
 } from "react-native";
 
-const PromptButton = ({ title, onPress = () => {}, style }) => {
+const PromptButton = ({ title, onPress = () => {}, style, selected, id}) => {
   const [isPressed, setIsPressed] = useState(false);
 
   return (
@@ -15,11 +15,14 @@ const PromptButton = ({ title, onPress = () => {}, style }) => {
       style={({ pressed }) => [
         styles.mainButton,
         style,
-        pressed && styles.mainButtonPressed,
+        pressed && styles.mainButtonHighlighted,
+        (selected === id) && styles.mainButtonSelected,
       ]}
       onPress={() => onPress()}
     >
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text style={[
+        styles.buttonText,
+        (selected === id) && styles.buttonTextSelected]}>{title}</Text>
     </Pressable>
   );
 };
@@ -36,7 +39,11 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
 
-  mainButtonPressed: {
+  mainButtonHighlighted: {
+    backgroundColor: "#e7eddf"
+  },
+
+  mainButtonSelected: {
     backgroundColor: "#d6dbce",
   },
 
@@ -45,6 +52,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
   },
+
+  buttonTextSelected: {
+    fontWeight: "bold"
+  }
 });
 
 export default PromptButton;
