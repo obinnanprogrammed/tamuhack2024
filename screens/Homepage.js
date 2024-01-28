@@ -24,34 +24,37 @@ export default function Home() {
                 <Carousel
                     data={[
                     {
-                        title: 'Joe Mama',
-                        text: 'Da googs',
-                        skillsText: 'Skills: React Native, Java, C++',
-                        image: require('../assets/theHomieMark.jpg'),
+                        title: 'Wednesday',
+                        text: 'Google',
+                        skillsText: 'Desired Skills:: React Native, Java, C++',
+                        image: {uri: 'https://imgs.search.brave.com/UNeuI5yzLgjVCVcAcc6X2cPEaAlNCbWpcGEKscWRq8Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzlkL2U5/L2E1LzlkZTlhNTUw/NjViZWRkZWJhMmE1/OTQwYzllYzU2ODk2/LmpwZw' },
                     },
                     {
                         title: 'Jackson Blaziken',
-                        text: 'Jane Street ',
-                        skillsText: 'Skills: Getting GPA Gamed',
-                        image: require('../assets/theHomieMark.jpg'),
-                    },
+                        text: 'American Airlines ',
+                        skillsText: 'Desired Skills:: Getting GPA Gamed',
+                        image: {uri: 'https://imgs.search.brave.com/3crl31mvZSWUHoXJwerdIxbEDdBqimUJrNdNkYwXtIs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/Z2FtZTguY28vMzY5/MjEyMi82NjZmZmE2/YjdiZDFiMjM1YWUy/NDk4MjM2YWY4ODNh/MC5wbmcvc2hvdw.jpeg' },
+                      },
                     {
                         title: 'Dahomie Mark',
-                        text: 'Community College',
-                        skillsText: 'Skills: Live. Laugh. Love.',
-                        image: require('../assets/theHomieMark.jpg'),
+                        text: 'TI',
+                        skillsText: 'Desired Skills: Live. Laugh. Love.',
+                        image: {uri: 'https://imgs.search.brave.com/K4RVh62FN4LaxUnDOD9hi-XMm9a9v1oOMSvbZf1dnCM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90aC10/aHVtYm5haWxlci5j/ZG4tc2ktZWR1LmNv/bS93TkRJdDhVQWdw/NWZ2X0c2eEdGMWJw/MEFqanc9LzEwMDB4/NzUwL2ZpbHRlcnM6/bm9fdXBzY2FsZSgp/L2h0dHBzOi8vdGYt/Y21zdjItc21pdGhz/b25pYW5tYWctbWVk/aWEuczMuYW1hem9u/YXdzLmNvbS9maWxl/ci8yMDExMDkyMzAy/NTAxM2RhaG9tZXkt/d2Fycmlvci5qcGc' },
                     },
                     {
-                        title: 'Ur Mom',
-                        text: 'TAMU',
-                        skillsText: 'Skills: Getting finessed by the homie Mark',
+                        title: 'Lacy Berd',
+                        text: 'Sandia National Labs',
+                        skillsText: 'Desired Skills: Getting finessed by the homie Mark',
                         image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/b6OtbeoveokusKpqwXhobnbMJXfohPsSIVOCr0rjdXQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzU4LzQ2Lzk5/LzM2MF9GXzU1ODQ2/OTk0MV95OHZqODdC/ZnJpQ3FKa2tXZW5N/NW51VkFsY0JJOXkx/ay5qcGc' },
+                    
                     },
                     {
                         title: 'Yo Mama',
                         text: 'Harvard',
                         skillsText: 'Skills: Bruh imagine',
-                        image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/9gg657tRvTWU16Iz6IN3GEmOBNgYhS2t_4Zv7KgQ5ds/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzMyLzRl/LzQ0LzMyNGU0NGI0/YWYyZmFlZWVkMTlm/NmU3N2MxN2U3MTc0/LmpwZw' },
+                    
                     },
                     ]}
                     renderItem={({ item, index }) => (
