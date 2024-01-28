@@ -1,36 +1,39 @@
 import * as React from "react";
-import {
-  StyleSheet,
-  Alert,
-  Text,
-  View,
-  Button,
-  TextInput,
-  TouchableWithoutFeedback,
-  Keyboard,
-  ScrollView,
-  Pressable,
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import PalmTree from "../components/PalmTree";
 import { LinearGradient } from "expo-linear-gradient";
 import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SkillField from "../components/SkillField";
 import AddSkillDialog from "../components/AddSkillDialog";
+import AddButton from "../components/AddButton";
 
 export default function StuExp() {
   const navigation = useNavigation();
-  const [message, setMessage] = useState("");
-  const [sMonth, setSMonth] = useState();
-  const [sYear, setSYear] = useState();
-  const [gMonth, setGMonth] = useState();
-  const [gYear, setGYear] = useState();
-
   const handleInput = () => {
-    navigation.navigate("Student Experience");
+    navigation.navigate("Student Skills");
   };
+  const [experience, setExperience] = useState([
+    { title: "Google", start: "2024-01-01", end: "2024-03-01", id: 0 },
+  ]);
+
+  const [isAdding, setIsAdding] = useState(false);
+
+  const deleteExperience = (id) => {
+    setExperience(experience.filter((object) => object.id != id));
+  };
+
+  const addExperience = (title, start, end) => {
+    newObject = { title: title, start: start, end: end };
+    setExperience((objects) => [...objects, newObject]);
+    setIsAdding(false);
+  };
+
+  useEffect(() => {
+    console.log(experience);
+  });
 
   return (
     <View style={styles.component}>
@@ -40,38 +43,56 @@ export default function StuExp() {
           imgSource={require("../assets/palm.png")}
           children={
             <View style={styles.wide}>
-            <AddSkillDialog title="Add Skill"/>
+              <AddSkillDialog
+                title="Add Experience"
+                active={isAdding}
+                addExpFunc={addExperience}
+              />
 
               <BackNavBar
                 onPress={() => navigation.navigate("Student Grad Date")}
               ></BackNavBar>
               <View style={styles.centeredItems}>
-                <Text style={styles.text}>
-                  Previous Experience and Involvement
-                </Text>
+                <Text style={styles.text}>Previous Experience</Text>
 
                 <View style={styles.experienceContainer}>
-                    <Text style={{ fontSize: 20, marginVertical: 16, fontWeight: "bold" }}>Experience</Text>
-                  <ScrollView contentContainerStyle={styles.scroll}>
+                  <AddButton onPress={() => setIsAdding(true)} />
 
-                    <SkillField />
-                    <SkillField />
-                   
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      marginVertical: 16,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Experience
+                  </Text>
+                  <ScrollView
+                    contentContainerStyle={[styles.scroll]}
+                    style={styles.scrollStyle}
+                  >
+                    <View>
+                      {experience.map((object) => {
+                        return (
+                          <SkillField
+                            key={object.id}
+                            title={object.title}
+                            start={object.start}
+                            end={object.end}
+                            id={object.id}
+                            deleteFunc={deleteExperience}
+                          ></SkillField>
+                        );
+                      })}
+                    </View>
                   </ScrollView>
                 </View>
 
-                <View style={styles.experienceContainer}>
-                    <Text style={{ fontSize: 20, marginTop: 16, fontWeight: "bold" }}>Insert Involvement</Text>
-                  <ScrollView contentContainerStyle={styles.scroll}>
-
-                    <SkillField />
-                   
-                  </ScrollView>
-                </View>
                 <View style={{ paddingTop: 40 }}>
                   <BlueButton
                     secondaryTitle="Next"
                     onPress={() => handleInput()}
+                    off={isAdding}
                   ></BlueButton>
                 </View>
               </View>
@@ -98,13 +119,14 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 
+  scrollStyle: {},
+
   scroll: {
-    height: '100%',
     width: 250,
     marginBottom: 20,
     backgroundColor: "#F0F6E8",
     alignItems: "center",
-    borderRadius: 30
+    borderRadius: 30,
   },
 
   experienceContainer: {
@@ -115,7 +137,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     backgroundColor: "#F0F6E8",
     alignItems: "center",
-    borderRadius: 30
+    borderRadius: 30,
   },
 
   text: {
