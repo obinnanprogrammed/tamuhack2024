@@ -33,10 +33,7 @@ export default function Chat({ route }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
 
-  console.log(route.params.sender.sender)
-
   const returnPage = () => {
-    alert("Hello")
     navigation.navigate("Messages");
   };
 
