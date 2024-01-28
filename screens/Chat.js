@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#e6e6e6",
     padding: 8,
     margin: 4,
+    marginRight: 20,
     borderRadius: 8,
   },
   otherMessage: {
