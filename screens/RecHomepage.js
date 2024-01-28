@@ -24,10 +24,10 @@ export default function RecHome() {
                 <Carousel
                     data={[
                     {
-                        title: 'Joe Mama',
-                        text: 'Da googs',
+                        title: 'Sheldon',
+                        text: 'TU',
                         skillsText: 'Skills: React Native, Java, C++',
-                        image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/UNeuI5yzLgjVCVcAcc6X2cPEaAlNCbWpcGEKscWRq8Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzlkL2U5/L2E1LzlkZTlhNTUw/NjViZWRkZWJhMmE1/OTQwYzllYzU2ODk2/LmpwZw' },
                     },
                     {
                         title: 'Jackson Blaziken',
