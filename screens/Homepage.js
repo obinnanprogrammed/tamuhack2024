@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import PalmTree from '../components/PalmTree';
 import Carousel from 'react-native-new-snap-carousel';
 import Header from '../components/Header';
+import BottomNavBar from '../components/BottomNavBar';
 
 export default function Home() {
   return (
@@ -99,6 +100,7 @@ export default function Home() {
                 </TouchableOpacity>
               </View>
             </View>
+            <BottomNavBar />
           </View>
         )}
       />
