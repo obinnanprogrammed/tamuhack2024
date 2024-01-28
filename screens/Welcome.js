@@ -24,7 +24,7 @@ export default function Welcome() {
               style={styles.image}
               source={require("../assets/logo-shadow.png")}
             />
-            <Text style={styles.welcomeText}>Welcome</Text>
+            <Text style={styles.welcomeText}>Welcome to SwipeTern</Text>
             <View style={styles.button}>
               <TwoLayerButton
                 onPress={handleButtonPress}
@@ -54,8 +54,9 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     color: "#ffffff",
-    fontSize: 64,
+    fontSize: 42,
     fontWeight: "bold",
+    textAlign: "center"
   },
 
   image: {

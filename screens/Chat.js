@@ -28,10 +28,12 @@ import { useNavigation } from "@react-navigation/native";
 //     )
 // }
 
-export default function Chat() {
+export default function Chat({ route }) {
   const navigation = useNavigation();
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+
+  console.log(route.params.sender.sender)
 
   const returnPage = () => {
     alert("Hello")
@@ -45,9 +47,8 @@ export default function Chat() {
       // You can add logic here to handle messages from other users or a chat server
     }
   };
-  const profilePicture =
-    "https://imgs.search.brave.com/awdguRICbw9H5Ew9DZy2j-H0hHfXCPPsb64m8DW4Msc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzE4LzgzLzgx/LzM2MF9GXzUxODgz/ODEwOV9wRlBnS2ps/bnBZMFdzS1ZKWHpT/QURVamk1UHZjSnQ1/Ui5qcGc";
-  const name = "Mickey";
+  const profilePicture =route.params.sender.profilePic;
+  const name = route.params.sender.sender;
 
   return (
     <View style={styles.component}>
