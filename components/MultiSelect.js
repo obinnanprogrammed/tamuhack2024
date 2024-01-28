@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text, View, Image, Alert } from "react-native";
 import { ScrollView } from "react-native";
 import MultiSelectPill from "./MultiSelectPill";
 
-const MultiSelect = ({ name, list, setList }) => {
+const MultiSelect = ({ name, list, setList, disabled=false }) => {
   const addElement = () => {
     Alert.prompt("Hello", "Insert", (text) => {
       setList((list) => [...list, text]);
@@ -19,6 +19,7 @@ const MultiSelect = ({ name, list, setList }) => {
         style={({ pressed }) => [
           styles.pressable,
           pressed && styles.pressablePressed,
+          disabled && {display: "none"}
         ]}
         onPress={addElement}
       >

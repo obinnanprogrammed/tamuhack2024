@@ -1,5 +1,4 @@
-import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 export default function Header() {
   const navigation = useNavigation();
@@ -14,7 +13,7 @@ export default function Header() {
 
     return(
         <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>Insert Name Here :)</Text>
+          <Text style={styles.headerText}>SwipeTern</Text>
           <TouchableOpacity onPress={() => openNotifications()}>
             <Image
               source={require('../assets/Bell.png')}
@@ -44,8 +43,9 @@ const styles = StyleSheet.create({
       marginBottom: 20,
     },
     headerText: {
-      fontSize: 25,
+      fontSize: 30,
       fontWeight: 'bold',
+      marginRight: 110
     },
     settingsIcon: {
       width: 40,

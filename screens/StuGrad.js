@@ -26,7 +26,6 @@ export default function StuGrad() {
 
   const validateInput = (text, id) => {
     
-
   };
 
   const handleInput = () => {
