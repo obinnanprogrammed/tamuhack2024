@@ -25,33 +25,37 @@ export default function RecHome() {
                     data={[
                     {
                         title: 'Sheldon',
-                        text: 'TU',
+                        text: 'Harvard',
                         skillsText: 'Skills: React Native, Java, C++',
-                        image: {uri: 'https://imgs.search.brave.com/UNeuI5yzLgjVCVcAcc6X2cPEaAlNCbWpcGEKscWRq8Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzlkL2U5/L2E1LzlkZTlhNTUw/NjViZWRkZWJhMmE1/OTQwYzllYzU2ODk2/LmpwZw' },
+                        image: {uri: 'https://imgs.search.brave.com/3RYZaRHD0HD9T1KmnPKZR2q-aoTwYPN3GAarR2_sqyc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9vcGVyLmNvbS9p/bWcvZ2FsbGVyeS9l/dmVyeS15b3VuZy1z/aGVsZG9uLWNoYXJh/Y3Rlci1yYW5rZWQt/d29yc3QtdG8tYmVz/dC9pbnRyby0xNjg2/NTgyODU0LmpwZw' },
                     },
                     {
                         title: 'Jackson Blaziken',
                         text: 'Jane Street ',
                         skillsText: 'Skills: Getting GPA Gamed',
-                        image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/qaGPQjUwDwRxLNYruehGf6ojGEoqy9J2UEpVMIddPHs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGV4ZXJ0by5jb20v/Y2RuLWNnaS9pbWFn/ZS93aWR0aD0zODQw/LHF1YWxpdHk9NzUs/Zm9ybWF0PWF1dG8v/aHR0cHM6Ly9lZGl0/b3JzLmRleGVydG8u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIzLzExLzI0L21h/bmR5LXlvdW5nLXNo/ZWxkb24tMTAyNHg1/NzUuanBn' },
+                    
                     },
                     {
                         title: 'Dahomie Mark',
                         text: 'Community College',
                         skillsText: 'Skills: Live. Laugh. Love.',
-                        image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/DGOI0tJKAO7DrzXb3VL5WdX60E-XdA5wInT2QCvNcks/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9vcGVyLmNvbS9p/bWcvZ2FsbGVyeS90/aGUteW91bmctc2hl/bGRvbi1hY3Rvci15/b3UtZm9yZ290LXBs/YXllZC1hLWNvbXBs/ZXRlbHktZGlmZmVy/ZW50LWNoYXJhY3Rl/ci1vbi1iYnQvaW50/cm8tMTY1NTg1NTg4/NS5qcGc' },
+                    
                     },
                     {
                         title: 'Ur Mom',
                         text: 'TAMU',
                         skillsText: 'Skills: Getting finessed by the homie Mark',
-                        image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/4iS6eGbTOLgXjRidCfPA0ex0QTGLvKXmxxLHJorqU4U/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGV4ZXJ0by5jb20v/Y2RuLWNnaS9pbWFn/ZS93aWR0aD0zODQw/LHF1YWxpdHk9NzUs/Zm9ybWF0PWF1dG8v/aHR0cHM6Ly9lZGl0/b3JzLmRleGVydG8u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIzLzExLzI0L21p/c3N5LWNvb3Blci0x/MDI0eDU3Ni5qcGc' },
+                    
                     },
                     {
                         title: 'Yo Mama',
-                        text: 'Harvard',
+                        text: 'TU',
                         skillsText: 'Skills: Bruh imagine',
-                        image: require('../assets/theHomieMark.jpg'),
+                        image: {uri: 'https://imgs.search.brave.com/qjvKWheU_1bQdAbeokJ0amKD4AOPRpIRLVG0eG-30-E/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdGFy/dGVmYWN0cy5jb20v/azIvbmV3cy82MTAv/dXBsb2FkL2VkaXRv/ci95b3VuZyUyMHNo/ZWxkb24lMjBjYnMu/anBn' },
+                    
                     },
                     ]}
                     renderItem={({ item, index }) => (
