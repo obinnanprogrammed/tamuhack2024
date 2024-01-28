@@ -4,8 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Swipeable } from 'react-native-gesture-handler/Swipeable';
-import { Chat, CreateAccount, Home, Login, Messages, Profile, RecCompany, 
+import { Chat, CreateAccount, Home, LoginPage, Messages, Profile, RecCompany, 
   RecInternship, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
   StuPic, StuSkill, UniAttend, Welcome } from './screens';
 
@@ -21,7 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginPage}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
         <Stack.Screen options={{ headerShown: false }} name="Messages" component={Messages}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Profile" component={Profile}></Stack.Screen>
