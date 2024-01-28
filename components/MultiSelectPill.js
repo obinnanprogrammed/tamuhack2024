@@ -16,7 +16,12 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
     paddingHorizontal: 8,
     marginRight: 10,
-    marginBottom: 5
+    marginBottom: 5,
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.2
   },
   
   pressableSelected: {

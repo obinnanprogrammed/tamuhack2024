@@ -11,7 +11,7 @@ import MultiSelect from "../components/MultiSelect";
 export default function StuExp() {
   const navigation = useNavigation();
   const handleInput = () => {
-    navigation.navigate("Student Skills");
+    navigation.navigate("Student Interests");
   };
 
   // THESE ARE TESTS ARRAYS, IMPLEMENT DATABASE PLS <3
