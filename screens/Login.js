@@ -11,19 +11,24 @@ export default function Login() {
     console.log('Button pressed!');
     navigation.navigate('Home')
   };
+  const handleToSignupPress = () => {
+    // Your button press logic goes here
+      console.log('Button pressed!');
+      navigation.navigate('Create Account')
+  };
   return (
     <View style={styles.container}>
       <PalmTree imgSource={require('../assets/palm2.png')} children={(
         <View style={styles.whitePart}>
           <View>
             <Text style={styles.loginText}>Login</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleToSignupPress}>
               <Text style={styles.dontHaveAccountText}>
                 Don't have an account? 
                 <Text style={styles.signUpText}> Sign up</Text>
               </Text>
             </TouchableOpacity>
-            <View style = {{marginTop:50}}>
+            <View style = {{marginTop:40}}>
             <TextInput
               style={styles.input}
               placeholder="Email"
@@ -44,7 +49,7 @@ export default function Login() {
             <BlueButton
               onPress={handleButtonPress}
               title="Primary Layer"
-              secondaryTitle="Get Started"
+              secondaryTitle="Login"
               style={styles.centeredButton}
             />
             </View>
@@ -56,23 +61,50 @@ export default function Login() {
   );
 }
 const styles = StyleSheet.create({
-    container: {
-      flex:1,
-      backgroundColor: '#23c6cb', // Change this color to your desired background color
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    centeredItems:{
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    button:{
-        marginTop:15
-    },
-    welcomeText:{
-        marginTop: 200,
-        color: '#ffffff',
-        fontSize: 64,
-        fontWeight: 'bold',
-    },
-  });
+  container: {
+    flex: 1,
+    backgroundColor: '#23c6cb',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  centeredItems: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dontHaveAccountText: {
+    marginTop: 5,
+    color: '#333333', // Change this color to your desired color
+    fontSize: 16,
+
+  },
+  signUpText: {
+    color: '#22afa9', // Change this color to your desired color
+  },
+  loginText: {
+    marginTop: 30,
+    color: '#000000',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  whitePart: {
+    marginTop: 400,
+    flex: 1,
+    backgroundColor: '#F0F6E8',
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    borderRadius: 0,
+    alignItems: 'center',
+  },
+  input: {
+    height: 40,
+    width: 300,
+    borderColor: 'gray',
+    borderBottomWidth: 1,
+    marginBottom: 30,
+  },
+  centeredButton: {
+    marginTop: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});
