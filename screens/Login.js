@@ -12,12 +12,32 @@ import PalmTree from "../components/PalmTree";
 import { useNavigation } from "@react-navigation/native";
 import BlueButton from "../components/BlueButton";
 import { TouchableWithoutFeedback } from "react-native";
+import { supabase } from "../lib/supabase";
 
 export default function Login() {
   const navigation = useNavigation();
-  const handleButtonPress = () => {
-    // Your button press logic goes here
-    navigation.navigate('Home');
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const handleButtonPress = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: 'example@email.com',
+        password: 'example-password'
+      })
+    
+
+      if (error) {
+        console.error('Login error:', error.message);
+        // Handle error, e.g., show error message
+      } else {
+        console.log('Login success:', user);
+        // Navigate to the 'Home' screen or any other screen you want to go to after successful login
+        navigation.navigate('Home');
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error.message);
+      // Handle unexpected errors
+    }
   };
   const handleToSignupPress = () => {
     // Your button press logic goes here
@@ -46,10 +66,12 @@ export default function Login() {
                     </Text>
                   </TouchableOpacity>
                   <View style={{ marginTop: 40 }}>
-                    <TextInput
+                  <TextInput
                       style={styles.input}
                       placeholder="Email"
                       underlineColorAndroid="transparent"
+                      value={email}
+                      onChangeText={(text) => setEmail(text)}
                     />
 
                     {/* Password input */}
@@ -58,6 +80,8 @@ export default function Login() {
                       placeholder="Password"
                       secureTextEntry
                       underlineColorAndroid="transparent"
+                      value={password}
+                      onChangeText={(text) => setPassword(text)}
                     />
                   </View>
                   <View>
