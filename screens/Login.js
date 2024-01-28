@@ -11,13 +11,18 @@ export default function Login() {
     console.log('Button pressed!');
     navigation.navigate('Home')
   };
+  const handleToSignupPress = () => {
+    // Your button press logic goes here
+      console.log('Button pressed!');
+      navigation.navigate('Create Account')
+  };
   return (
     <View style={styles.container}>
       <PalmTree imgSource={require('../assets/palm2.png')} children={(
         <View style={styles.whitePart}>
           <View>
             <Text style={styles.loginText}>Login</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleToSignupPress}>
               <Text style={styles.dontHaveAccountText}>
                 Don't have an account? 
                 <Text style={styles.signUpText}> Sign up</Text>
@@ -83,7 +88,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   whitePart: {
-    marginTop: 350,
+    marginTop: 400,
     flex: 1,
     backgroundColor: '#F0F6E8',
     borderTopLeftRadius: 50,
