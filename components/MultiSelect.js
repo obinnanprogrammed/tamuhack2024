@@ -25,12 +25,11 @@ const MultiSelect = ({ name, list, setList }) => {
         <Image
           style={styles.image}
           source={require("../assets/plus.png")}
-
         ></Image>
       </Pressable>
       <Text style={styles.title}>{name}</Text>
-{/* TODO: FIX BUTTON */}
-      <View style={{height: 60}}> 
+      {/* TODO: FIX BUTTON */}
+      <View style={{ height: 75}}>
         <ScrollView contentContainerStyle={styles.scrollable}>
           {list.map((text, index) => (
             <MultiSelectPill
@@ -54,20 +53,21 @@ const styles = StyleSheet.create({
     width: 300,
     height: 130,
     padding: 14,
-    marginBottom: 10
+    marginBottom: 10,
   },
 
   title: {
     fontSize: 16,
     textAlign: "center",
-    marginBottom: 20,
     fontWeight: "bold",
+    marginBottom: 5
   },
 
   scrollable: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
+    marginTop: 10
   },
 
   pressable: {

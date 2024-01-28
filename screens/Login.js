@@ -30,19 +30,19 @@ export default function Login() {
       );
       const user = userCredential.user;
 
-      console.log('Login success:', user);
+      console.log("Login success:", user);
 
       // Navigate to the 'Home' screen or any other screen you want to go to after successful login
-      navigation.navigate('Home');
+      navigation.navigate("Home");
     } catch (error) {
-      console.error('Login error:', error.message);
+      console.error("Login error:", error.message);
       // Handle error, e.g., show error message
     }
   };
 
   const handleToSignupPress = () => {
     // Your button press logic goes here
-      navigation.navigate('Create Account');
+    navigation.navigate("Create Account");
   };
   return (
     <View style={styles.container}>
@@ -54,7 +54,7 @@ export default function Login() {
               behavior="padding"
               style={{
                 height: "100%",
-                flexDirection: "column-reverse"
+                flexDirection: "column-reverse",
               }}
             >
               <View style={styles.whitePart}>
@@ -67,7 +67,7 @@ export default function Login() {
                     </Text>
                   </TouchableOpacity>
                   <View style={{ marginTop: 40 }}>
-                  <TextInput
+                    <TextInput
                       style={styles.input}
                       placeholder="Email"
                       underlineColorAndroid="transparent"
@@ -133,8 +133,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#F0F6E8",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    height: "50%",
-    alignItems: "center"
+    height: 370,
+    alignItems: "center",
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      width: 0,
+      height: -4
+    }
   },
   input: {
     height: 40,

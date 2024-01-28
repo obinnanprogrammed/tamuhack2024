@@ -38,19 +38,20 @@ export default function MessagesHome() {
         <PalmTree
           style={styles.centeredItems}
           imgSource={require("../assets/palm.png")}
-        >
-          <View style={styles.wide}>
-            <View style={[styles.centeredItems, styles.bottomBorder]}>
-              <Text style={styles.text1}>Messages</Text>
+          children={
+            <View style={styles.wide}>
+              <View style={[styles.centeredItems, styles.bottomBorder]}>
+                <Text style={styles.text1}>Messages</Text>
+              </View>
+              <FlatList
+                data={data}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.id}
+              />
+              <BottomNavBar />
             </View>
-            <FlatList
-              data={data}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-            />
-            <BottomNavBar />
-          </View>
-        </PalmTree>
+          }
+        />
       </LinearGradient>
     </View>
   );
@@ -82,7 +83,6 @@ const styles = StyleSheet.create({
 
   bottomBorder: {
     borderBottomWidth: 1,
-    marginBottom: 40
   },
 
   text: {
@@ -128,4 +128,13 @@ const styles = StyleSheet.create({
   message: {
     fontSize: 16,
   },
+
+  shadow: {
+    paddingTop: 40,
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      width: 0,
+      height: 4
+    }
+  }
 });
