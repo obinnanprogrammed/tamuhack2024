@@ -33,9 +33,7 @@ export default function Login() {
               behavior="padding"
               style={{
                 height: "100%",
-                flexDirection: "column-reverse",
-                borderWidth: 5,
-                borderColor: "black",
+                flexDirection: "column-reverse"
               }}
             >
               <View style={styles.whitePart}>
@@ -63,7 +61,7 @@ export default function Login() {
                     />
                   </View>
                   <View>
-                    <View style={{ marginTop: -20, alignItems: "center" }}>
+                    <View style={{ marginBottom: 20, alignItems: "center" }}>
                       <BlueButton
                         onPress={handleButtonPress}
                         title="Primary Layer"
