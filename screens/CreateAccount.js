@@ -12,12 +12,32 @@ import {
 import PalmTree from "../components/PalmTree";
 import { useNavigation } from "@react-navigation/native";
 import BlueButton from "../components/BlueButton";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+} from "firebase/auth";
 
 export default function CreateAccount() {
   const navigation = useNavigation();
-  const handleButtonPress = () => {
-    // Your button press logic goes here
-    navigation.navigate("Student/Recruiter");
+  
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const handleButtonPress = async () => {
+    try {
+        const auth = getAuth();
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+    
+        console.log('Account created:', user);
+        // Optionally, you can automatically sign in the user after account creation
+        navigation.navigate('Home');
+      } catch (error) {
+        console.error('Account creation error:', error.message);
+        // Handle error, e.g., show error message
+      }
   };
   const handleToSignupPress = () => {
     // Your button press logic goes here
@@ -46,20 +66,26 @@ export default function CreateAccount() {
                     </Text>
                   </TouchableOpacity>
                   <View style={{ marginTop: 25 }}>
-                    <TextInput
+                  <TextInput
                       style={styles.input}
                       placeholder="First Name"
                       underlineColorAndroid="transparent"
+                      value={firstName}
+                      onChangeText={(text) => setFirstName(text)}
                     />
                     <TextInput
                       style={styles.input}
                       placeholder="Last Name"
                       underlineColorAndroid="transparent"
+                      value={lastName}
+                      onChangeText={(text) => setLastName(text)}
                     />
                     <TextInput
                       style={styles.input}
                       placeholder="Email"
                       underlineColorAndroid="transparent"
+                      value={email}
+                      onChangeText={(text) => setEmail(text)}
                     />
 
                     {/* Password input */}
@@ -68,12 +94,16 @@ export default function CreateAccount() {
                       placeholder="Password"
                       secureTextEntry
                       underlineColorAndroid="transparent"
+                      value={password}
+                      onChangeText={(text) => setPassword(text)}
                     />
                     <TextInput
                       style={styles.input}
                       placeholder="Confirm Password"
                       secureTextEntry
                       underlineColorAndroid="transparent"
+                      value={confirmPassword}
+                      onChangeText={(text) => setConfirmPassword(text)}
                     />
                   </View>
                   <View>

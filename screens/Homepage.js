@@ -5,7 +5,7 @@ import PalmTree from '../components/PalmTree';
 import Carousel from 'react-native-new-snap-carousel';
 import Header from '../components/Header';
 import BottomNavBar from '../components/BottomNavBar';
-
+const screenWidth = Dimensions.get('window').width;
 export default function Home() {
   return (
     <LinearGradient
@@ -59,8 +59,6 @@ export default function Home() {
                         style={{
                         backgroundColor: 'floralwhite',
                         height: 620,
-                        marginLeft: 20,
-                        marginRight: 20,
                         borderRadius: 20,
                         }}
                     >
@@ -81,8 +79,8 @@ export default function Home() {
 
                     </View>
                     )}
-                    sliderWidth={380}
-                    itemWidth={390}
+                    sliderWidth={screenWidth}
+                    itemWidth={screenWidth } // Adjust margin as needed
                     layout={'tinder'}
                 />
               <View style={styles.circleButtonContainer}>

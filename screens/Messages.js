@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     borderRadius: 10, // Set border radius to make square bubbles
-    backgroundColor: "#9adbdf", // Set background color for bubbles
+    backgroundColor: "#ffffff", // Set background color for bubbles
     marginBottom: 10,
   },
 
