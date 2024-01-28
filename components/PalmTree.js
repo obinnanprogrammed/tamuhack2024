@@ -8,9 +8,7 @@ const PalmTree = ({ style, children, imgSource }) => {
       width: '100%',
       height: '100%',
     }}>
-      <View style={style}>
-        {children}
-      </View>
+      {children}
     </ImageBackground>
   );
 }
