@@ -36,15 +36,15 @@ export default function MessagesHome() {
           imgSource={require("../assets/palm.png")}
           children={
             <View style={styles.wide}>
-              <View style={styles.centeredItems}>
+              <View style={[styles.centeredItems, styles.bottomBorder]}>
                 <Text style={styles.text1}>Messages</Text>
-                <Text style={styles.text}>________________</Text>
               </View>
               <FlatList
                 data={data}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
               />
+              <BottomNavBar />
             </View>
           }
         />
@@ -70,11 +70,16 @@ const styles = StyleSheet.create({
 
   text1: {
     marginTop: 70,
-    marginBottom: 0,
+    marginBottom: 5,
     color: "#000",
     fontSize: 40,
     fontWeight: "bold",
     textAlign: "left",
+  },
+
+  bottomBorder: {
+    borderBottomWidth: 1,
+    marginBottom: 40
   },
 
   text: {

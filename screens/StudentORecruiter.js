@@ -16,10 +16,16 @@ export default function StudentORecruiter() {
   const [selected, setSelected] = useState(0);
 
   const submitUserType = () => {
-    if (selected === 0) {
-      return;
+    switch (selected) {
+      case 0:
+        return;
+      case 1:
+        navigation.navigate("Student University");
+        break;
+      case 2:
+        navigation.navigate("Recruiter Company")
+        break;
     }
-    navigation.navigate("Student University");
 
     // Backend yay
   };
