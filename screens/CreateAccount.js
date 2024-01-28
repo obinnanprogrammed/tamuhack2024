@@ -33,9 +33,7 @@ export default function CreateAccount() {
               behavior="padding"
               style={{
                 height: "100%",
-                flexDirection: "column-reverse",
-                borderWidth: 5,
-                borderColor: "black",
+                flexDirection: "column-reverse"
               }}
             >
               <View style={styles.whitePart}>
