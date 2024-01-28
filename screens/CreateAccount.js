@@ -15,6 +15,7 @@ import BlueButton from "../components/BlueButton";
 import {
     getAuth,
     createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
 } from "firebase/auth";
 
 export default function CreateAccount() {
@@ -33,7 +34,8 @@ export default function CreateAccount() {
     
         console.log('Account created:', user);
         // Optionally, you can automatically sign in the user after account creation
-        navigation.navigate('Home');
+        await signInWithEmailAndPassword(auth, email, password);
+        navigation.navigate('Student/Recruiter');
       } catch (error) {
         console.error('Account creation error:', error.message);
         // Handle error, e.g., show error message
