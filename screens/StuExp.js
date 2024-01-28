@@ -69,7 +69,6 @@ export default function StuExp() {
                   </Text>
                   <ScrollView
                     contentContainerStyle={[styles.scroll]}
-                    style={styles.scrollStyle}
                   >
                     <View>
                       {experience.map((object) => {
@@ -118,8 +117,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-
-  scrollStyle: {},
 
   scroll: {
     width: 250,

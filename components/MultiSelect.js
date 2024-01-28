@@ -1,21 +1,36 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View, Image, Alert } from "react-native";
 import { ScrollView } from "react-native";
 import MultiSelectPill from "./MultiSelectPill";
 
-const MultiSelect = ({ list, setList }) => {
-  const addElement = (name) => {
-    setList((list) => [...list, name]);
+const MultiSelect = ({ name, list, setList }) => {
+  const addElement = () => {
+    Alert.prompt("Hello", "Insert", (text) => {
+      setList((list) => [...list, text]);
+    });
   };
-  
+
   const deleteElement = (id) => {
     setList((list) => list.filter((element, index) => index != id));
   };
 
   return (
     <View style={styles.main}>
-      <Text style={styles.title}>Coding Languages</Text>
+      <Pressable
+        style={({ pressed }) => [
+          styles.pressable,
+          pressed && styles.pressablePressed,
+        ]}
+        onPress={addElement}
+      >
+        <Image
+          style={styles.image}
+          source={require("../assets/plus.png")}
 
-      <View>
+        ></Image>
+      </Pressable>
+      <Text style={styles.title}>{name}</Text>
+{/* TODO: FIX BUTTON */}
+      <View style={{height: 60}}> 
         <ScrollView contentContainerStyle={styles.scrollable}>
           {list.map((text, index) => (
             <MultiSelectPill
@@ -37,21 +52,37 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 30,
     width: 300,
-    height: 120,
-    padding: 10,
+    height: 130,
+    padding: 14,
+    marginBottom: 10
   },
 
   title: {
     fontSize: 16,
     textAlign: "center",
-    marginBottom: 13,
+    marginBottom: 20,
+    fontWeight: "bold",
   },
 
   scrollable: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
-    height: 60,
+  },
+
+  pressable: {
+    position: "absolute",
+    left: 250,
+  },
+
+  pressablePressed: {
+    opacity: 0.5,
+  },
+
+  image: {
+    height: 40,
+    width: 40,
+    resizeMode: "contain",
   },
 });
 
