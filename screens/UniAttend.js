@@ -5,6 +5,7 @@ import PalmTree from "../components/PalmTree";
 import { LinearGradient } from "expo-linear-gradient";
 import BackNavBar from "../components/BackNavBar";
 import InputField from "../components/InputField";
+import BlueButton from "../components/BlueButton";
 
 export default function UniAttend() {
   const navigation = useNavigation();
@@ -23,6 +24,7 @@ export default function UniAttend() {
               <View style={styles.centeredItems}>
                 <Text style={styles.text}>What college do you attend?</Text>
                 <InputField></InputField>
+                <BlueButton secondaryTitle="Next" onPress={() => navigation.navigate("Student University")}></BlueButton>
               </View>
             </View>
           }
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
 
   text: {
     marginTop: 50,
+    marginBottom: 30,
     paddingHorizontal: 20,
     color: "#000",
     fontSize: 40,
