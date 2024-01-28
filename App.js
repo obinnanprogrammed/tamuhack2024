@@ -25,7 +25,7 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Student Pic Upload">
+      <Stack.Navigator initialRouteName="Messages">
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 

@@ -1,12 +1,13 @@
+
 import * as React from "react";
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import PalmTree from "../components/PalmTree";
-// import { useNavigation } from '@react-navigation/native';
-// import { TouchableOpacity } from 'react-native';
 import BottomNavBar from '../components/BottomNavBar';
+import { useNavigation } from '@react-navigation/native';
 
 export default function MessagesHome() {
+  const navigation = useNavigation();
   const data = [
     { id: "1", sender: "Tom", message: "Hello there!", profilePic: "https://imgs.search.brave.com/r2vmNVKwdB_xlEQYbsOwpmZFQh4akcJjNTjApKPxzyU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZXRy/by5jby51ay93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMS9T/RUlfMTg3Mjg1OTUz/LWUzNzIuanBnP3F1/YWxpdHk9OTAmc3Ry/aXA9YWxsJnpvb209/MSZyZXNpemU9NjQ0/LDQyOQ" },
     { id: "2", sender: "Alice", message: "How are you?", profilePic: "https://imgs.search.brave.com/j-rsyVP0gE5nSXqDAP70tk-EBXrzHbX1BzvvzJCW8qM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk5qYzFNelkw/TlRndE5XSmxNUzAw/TWpRNUxUbGxNemt0/TVdJd01EazRNemho/TldGaFhrRXlYa0Zx/Y0dkZVFWUm9hWEpr/VUdGeWRIbEpibWRs/YzNScGIyNVhiM0py/Wm14dmR3QEAuX1Yx/X1FMNzVfVVg1MDBf/Q1IwLDAsNTAwLDI4/MV8uanBn" },
@@ -19,7 +20,10 @@ export default function MessagesHome() {
   ];
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.messageItem}>
+    <TouchableOpacity 
+      style={styles.messageItem}
+      onPress={() => navigation.navigate('Chat', { sender: item.sender, messages: [item] })}
+    >
       <Image source={{ uri: item.profilePic }} style={styles.profilePic} />
       <View style={styles.messageContent}>
         <Text style={styles.sender}>{item.sender}</Text>
@@ -34,20 +38,19 @@ export default function MessagesHome() {
         <PalmTree
           style={styles.centeredItems}
           imgSource={require("../assets/palm.png")}
-          children={
-            <View style={styles.wide}>
-              <View style={[styles.centeredItems, styles.bottomBorder]}>
-                <Text style={styles.text1}>Messages</Text>
-              </View>
-              <FlatList
-                data={data}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.id}
-              />
-              <BottomNavBar />
+        >
+          <View style={styles.wide}>
+            <View style={[styles.centeredItems, styles.bottomBorder]}>
+              <Text style={styles.text1}>Messages</Text>
             </View>
-          }
-        />
+            <FlatList
+              data={data}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.id}
+            />
+            <BottomNavBar />
+          </View>
+        </PalmTree>
       </LinearGradient>
     </View>
   );
@@ -101,8 +104,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     padding: 10,
-    borderRadius: 10, // Set border radius to make square bubbles
-    backgroundColor: "#ffffff", // Set background color for bubbles
+    borderRadius: 10,
+    backgroundColor: "#ffffff",
     marginBottom: 10,
   },
 
