@@ -11,12 +11,12 @@ import MultiSelect from "../components/MultiSelect";
 export default function StuExp() {
   const navigation = useNavigation();
   const handleInput = () => {
-    navigation.navigate("Student Pic Upload");
+    navigation.navigate("Home");
   };
 
   // THESE ARE TESTS ARRAYS, IMPLEMENT DATABASE PLS <3
-  const [locations, setLocations] = useState(["USA", "Texas", "Houston, TX", "College Station, TX", "California"])
-  const [roles, setRoles] = useState(["Software Developer", "Intern", "Lead Developer", "Senior Developer"])
+  const [locations, setLocations] = useState([])
+  const [roles, setRoles] = useState([])
   
   return (
     <View style={styles.component}>

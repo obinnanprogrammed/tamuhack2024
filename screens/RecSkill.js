@@ -14,9 +14,9 @@ export default function RecSkills() {
     navigation.navigate("Recruiter Internships");
   };
 
-  const [languages, setLanguages] = useState(["C++", "Java", "Python", "C#", "HTML", "CSS", "JavaScript", "C"])
-  const [libraries, setLibraries] = useState(["Selenium", "Node", "React", "Test", "Test2", "Long Test"])
-  const [devTools, setDevTools] = useState(["Atom", "GitHub", "Foundation", "Bootcamp", "Visual Studio Code", "Docker"])
+  const [languages, setLanguages] = useState([])
+  const [libraries, setLibraries] = useState([])
+  const [devTools, setDevTools] = useState([])
   
   return (
     <View style={styles.component}>

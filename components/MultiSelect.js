@@ -4,7 +4,7 @@ import MultiSelectPill from "./MultiSelectPill";
 
 const MultiSelect = ({ name, list, setList, disabled=false }) => {
   const addElement = () => {
-    Alert.prompt("Hello", "Insert", (text) => {
+    Alert.prompt("Add Activity", "", (text) => {
       setList((list) => [...list, text]);
     });
   };
