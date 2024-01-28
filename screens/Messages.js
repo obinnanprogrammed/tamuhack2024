@@ -16,6 +16,9 @@ export default function MessagesHome() {
     { id: "5", sender: "Peter", message: "Meeting tmr?", profilePic: "https://imgs.search.brave.com/gBF3YLaOkKBlIhvZPX0NenDXBr_TOIBwAUQaSw8VBrE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Rp/c25leS9pbWFnZXMv/Mi8yNS9QZXRlcl9Q/YW5faW5fS2luZ2Rv/bV9IZWFydHMucG5n/L3JldmlzaW9uL2xh/dGVzdC9zY2FsZS10/by13aWR0aC1kb3du/LzI1MD9jYj0yMDE0/MDYwODE4MjEyMA.jpeg" },
     { id: "6", sender: "Jyo", message: "Bobba?", profilePic: "https://imgs.search.brave.com/19YQBJQY_EPEgcErHEb2da7pTjnPh1mqT_B3damNr2Y/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvZ29vZnktcGlj/dHVyZXMtcGpvMmto/NHNraTNzcTY1YS5q/cGc" },
     { id: "7", sender: "Obinna", message: "No!More Physics?!", profilePic: "https://imgs.search.brave.com/vjM7vSDXxgcf_N6SI9lYaPQBgmLVH8y10GC-0ZLFcnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/NS81Ny9NYXVpX0Rp/c25leS53ZWJwLzUx/MnB4LU1hdWlfRGlz/bmV5LndlYnAucG5n" },
+    { id: "8", sender: "Dory", message: "I forgot?!", profilePic: "https://imgs.search.brave.com/5i_hbH43sLGy_3UYdl0oqykrCP7nOIyc0BjLLaS1wQE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FlL2Qz/L2VhL2FlZDNlYWZk/M2RjYTJkYWZmOTM0/MmE0OWFjNmZmYWQy/LmpwZw" },
+    { id: "9", sender: "LALA", message: "Ohh lala!", profilePic: "https://imgs.search.brave.com/gLciFO7xykeQKiunWQ1S9-s1fq1snzvKAxAEzg1YGac/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzY1LzEwLzQ3/LzM2MF9GXzY1MTA0/NzE4X3gxN2E3Nnd6/V0tJbTNCbGhBNnV5/WVZrRHM5OTgyYzZx/LmpwZw" },
+    { id: "10", sender: "Nick", message: "Join the Nick's Club?!", profilePic: "https://imgs.search.brave.com/gLciFO7xykeQKiunWQ1S9-s1fq1snzvKAxAEzg1YGac/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzY1LzEwLzQ3/LzM2MF9GXzY1MTA0/NzE4X3gxN2E3Nnd6/V0tJbTNCbGhBNnV5/WVZrRHM5OTgyYzZx/LmpwZw" },
     // Add more messages as needed
   ];
 
