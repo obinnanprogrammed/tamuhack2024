@@ -33,7 +33,7 @@ export default function RecHome() {
                         title: 'Jackson Blaziken',
                         text: 'Jane Street ',
                         skillsText: 'Skills: Getting GPA Gamed',
-                        image: {uri: 'https://imgs.search.brave.com/qaGPQjUwDwRxLNYruehGf6ojGEoqy9J2UEpVMIddPHs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGV4ZXJ0by5jb20v/Y2RuLWNnaS9pbWFn/ZS93aWR0aD0zODQw/LHF1YWxpdHk9NzUs/Zm9ybWF0PWF1dG8v/aHR0cHM6Ly9lZGl0/b3JzLmRleGVydG8u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIzLzExLzI0L21h/bmR5LXlvdW5nLXNo/ZWxkb24tMTAyNHg1/NzUuanBn' },
+                        image: {uri: 'https://imgs.search.brave.com/ADUdF1BBum55P7T0fJb1CJV2ApB0eIO6VUyZZ5qYw70/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGV4ZXJ0by5jb20v/Y2RuLWNnaS9pbWFn/ZS93aWR0aD0zODQw/LHF1YWxpdHk9NzUs/Zm9ybWF0PWF1dG8v/aHR0cHM6Ly9lZGl0/b3JzLmRleGVydG8u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIzLzExLzI0L21l/bWF3LXlvdW5nMHNo/ZWxkb24tMTAyNHg1/NzYuanBn' },
                     
                     },
                     {
