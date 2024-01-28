@@ -4,6 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import PalmTree from "../components/PalmTree";
 // import { useNavigation } from '@react-navigation/native';
 // import { TouchableOpacity } from 'react-native';
+import BottomNavBar from '../components/BottomNavBar';
 
 export default function MessagesHome() {
   const data = [
