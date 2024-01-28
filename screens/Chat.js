@@ -57,7 +57,7 @@ export default function Chat() {
             value={newMessage}
             onChangeText={(text) => setNewMessage(text)}
           />
-          <Button title="Send" onPress={handleSendMessage} />
+          <Button title="Send" onPress={handleSendMessage}/>
         </View>
       </View>
           }
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    paddingTop: 70,
+    paddingTop: 90,
   },
   userMessage: {
     alignSelf: 'flex-end',
