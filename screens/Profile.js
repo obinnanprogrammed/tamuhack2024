@@ -28,24 +28,15 @@ export default function Profile() {
 
   const [skills, setSkills] = useState([
     "Software Developer",
-    "Artificial Intelligence",
-    "Web Development",
-    "Internships",
+    "Artificial Intelligence"
   ]);
   const [experience, setExperience] = useState([
     "Google",
-    "Microsoft",
-    "Meta",
-    "Netflix",
-    "Apple",
-    "Amazon",
+    "Microsoft"
   ]);
   const [interests, setInterests] = useState([
     "Artificial Intelligence",
-    "Web Development",
-    "Machine Learning",
-    "Data Science",
-    "Software Engineering",
+    "Web Development"
   ]);
 
   return (
