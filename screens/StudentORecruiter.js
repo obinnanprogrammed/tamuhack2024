@@ -15,9 +15,24 @@ export default function StudentORecruiter() {
   const navigation = useNavigation();
   const [selected, setSelected] = useState(0);
 
+  const submitUserType = () => {
+    if (selected === 0) {
+      return;
+    }
+    navigation.navigate("Student University");
+
+    // Backend yay
+  };
+
   return (
     <View style={styles.component}>
-      <LinearGradient style={styles.gradient} colors={["#F0F6E8", "#F2DDC3"]}>
+      <LinearGradient
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+        colors={["#F0F6E8", "#F2DDC3"]}
+      >
         <PalmTree
           style={styles.centeredItems}
           imgSource={require("../assets/palm.png")}
@@ -25,21 +40,27 @@ export default function StudentORecruiter() {
             <View style={styles.wide}>
               <View style={styles.centeredItems}>
                 <Text style={styles.text}>I am a...</Text>
-                <PromptButton
-                  title="Student"
-                  style={{ marginTop: 60 }}
-                  id={1}
-                  selected={selected}
-                  onPress={() => setSelected(1)}
-                ></PromptButton>
-                <PromptButton
-                  title="Recruiter"
-                  style={{ marginTop: 20, marginBottom: 40 }}
-                  id={2}
-                  selected={selected}
-                  onPress={() => setSelected(2)}
-                ></PromptButton>
-                <BlueButton secondaryTitle="Next" onPress={() => navigation.navigate("Student University")}></BlueButton>
+                <View style={styles.buttons}>
+                  <PromptButton
+                    title="Student"
+                    style={{ marginTop: 60 }}
+                    id={1}
+                    selected={selected}
+                    onPress={() => setSelected(1)}
+                  ></PromptButton>
+                  <PromptButton
+                    title="Recruiter"
+                    style={{ marginTop: 20 }}
+                    id={2}
+                    selected={selected}
+                    onPress={() => setSelected(2)}
+                  ></PromptButton>
+                </View>
+                <BlueButton
+                  secondaryTitle="Next"
+                  onPress={() => submitUserType()}
+                  off={selected == 0}
+                ></BlueButton>
               </View>
             </View>
           }

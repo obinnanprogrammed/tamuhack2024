@@ -32,11 +32,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#F0F6E8",
     borderWidth: 1,
     borderColor: "black",
-    borderRadius: 20,
+    borderRadius: 30,
     width: 280,
     height: 60,
     justifyContent: "center",
     alignContent: "center",
+    shadowOffset: {
+      width: 0,
+      height: 4
+    },
+    shadowColor: "black",
+    shadowRadius: 2,
+    shadowOpacity: 0.2
   },
 
   mainButtonHighlighted: {

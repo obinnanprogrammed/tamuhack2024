@@ -1,11 +1,19 @@
-import { TextInput } from "react-native-gesture-handler";
+import { View, TextInput } from "react-native";
+
 
 const InputField = () => {
   return (
-    <TextInput placeholder={"Hello"} style={{
-      borderColor: "black",
-      borderWidth: 1
-    }} />
+    <View>
+      <TextInput placeholder={"Type in your university"} style={[
+        {
+          borderColor: "black",
+          borderBottomWidth: 1,
+          fontSize: 20,
+          width: 300,
+          textAlign: "center"
+        }
+      ]} />
+    </View>
   );
 }
  

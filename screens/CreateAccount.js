@@ -8,12 +8,10 @@ export default function CreateAccount() {
     const navigation = useNavigation(); 
     const handleButtonPress = () => {
     // Your button press logic goes here
-      console.log('Button pressed!');
-      navigation.navigate('Home')
+      navigation.navigate('Student/Recruiter')
     };
     const handleToSignupPress = () => {
       // Your button press logic goes here
-        console.log('Button pressed!');
         navigation.navigate('Login')
     };
     return (
