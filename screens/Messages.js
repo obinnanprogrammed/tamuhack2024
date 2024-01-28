@@ -92,7 +92,7 @@ export default function MessagesHome() {
     <TouchableOpacity
       style={styles.messageItem}
       onPress={() =>
-        navigation.navigate("Chat", { sender: item.sender, messages: [item] })
+        navigation.navigate("Chat", { sender: item, messages: [item] })
       }
     >
       <Image source={{ uri: item.profilePic }} style={styles.profilePic} />
