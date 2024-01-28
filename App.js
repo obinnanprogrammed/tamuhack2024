@@ -25,11 +25,7 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
-<<<<<<< HEAD
-      <Stack.Navigator initialRouteName="Profile">
-=======
       <Stack.Navigator initialRouteName="Student Pic Upload">
->>>>>>> cbe5773950588d4da3c1ab258aee4f8d20a7a435
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
