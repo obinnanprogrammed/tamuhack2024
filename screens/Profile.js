@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start', // Updated to 'flex-start'
   },
   profileContainer: {
     alignItems: 'center',
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 75,
+    marginTop: 70,
     marginBottom: 20,
   },
   username: {
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
   },
+  
   bio: {
     fontSize: 16,
     color: 'gray',
