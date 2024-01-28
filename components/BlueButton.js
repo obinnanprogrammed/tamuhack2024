@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function BlueButton({ onPress, title, secondaryTitle, off=false}) {
   return (
-    <TouchableOpacity onPress={onPress} style={{marginTop: 40}} disabled={off}>
+    <TouchableOpacity onPress={onPress} disabled={off}>
       <View style={styles.outerContainer}>
         <View style={styles.secondaryLayer}>
           <Text style={styles.secondaryText}>{secondaryTitle}</Text>
