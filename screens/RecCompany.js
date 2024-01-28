@@ -13,8 +13,9 @@ import PromptButton from "../components/PromptButton";
 import TwoLayerButton from "../components/Button";
 import BackNavBar from "../components/BackNavBar";
 
-export default function RecCompany() {
+export default function StuGrad() {
   const navigation = useNavigation();
+
   return (
     <View style={styles.component}>
       <LinearGradient style={styles.gradient} colors={["#F0F6E8", "#F2DDC3"]}>
@@ -24,10 +25,10 @@ export default function RecCompany() {
           children={
             <View style={styles.wide}>
               <BackNavBar
-                onPress={() => navigation.navigate("Recruiter Company")}
+                onPress={() => navigation.navigate("Student/Recruiter")}
               ></BackNavBar>
               <View style={styles.centeredItems}>
-                <Text style={styles.text}>What company do you recurit for?</Text>
+                <Text style={styles.text}>What company do you recuite for?</Text>
                 <PromptButton
                   title="Student"
                   style={{ marginTop: 50 }}
