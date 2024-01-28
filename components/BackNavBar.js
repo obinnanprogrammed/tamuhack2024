@@ -1,11 +1,11 @@
 import { StyleSheet, View } from "react-native";
 import { Pressable, Image } from "react-native";
 
-const BackNavBar = ({ onPress = () => {}}) => {
+const BackNavBar = ({ onPress = () => {}, source=require("../assets/back-button.png")}) => {
   return (
     <View>
       <Pressable onPress={() => onPress()} style={styles.container}>
-        <Image source={require("../assets/back-button.png")} style={{
+        <Image source={source} style={{
           width: 25,
           height: 25
         }}></Image>

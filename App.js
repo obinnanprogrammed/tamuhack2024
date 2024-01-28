@@ -5,9 +5,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Swipeable } from 'react-native-gesture-handler/Swipeable';
 import firebase from "./firebase";
 import { Chat, CreateAccount, Home, Login, Messages, Profile, RecCompany, 
-  RecInternship, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
-  StuPic, StuSkill, UniAttend, Welcome} from './screens';
-import RecHome from './screens/RecHomepage';
+  RecInternship, RecHome, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
+  StuPic, StuSkill, UniAttend, Welcome } from './screens';
+import Notifications from './screens/Notifications';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +26,7 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Messages">
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
@@ -36,7 +36,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="Home" component={Home}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Rec Home" component={RecHome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Settings" component={Settings}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Notifications" component={Settings}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Notifications" component={Notifications}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student/Recruiter" component={StudentORecruiter}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Experience" component={StuExp}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Grad Date" component={StuGrad}></Stack.Screen>
