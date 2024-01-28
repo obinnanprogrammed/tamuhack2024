@@ -4,16 +4,16 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//...
+//...import InputField from "../components/InputField";
+import BlueButton from "../components/BlueButton";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import PalmTree from "../components/PalmTree";
 import { LinearGradient } from "expo-linear-gradient";
-import PromptButton from "../components/PromptButton";
-import TwoLayerButton from "../components/Button";
 import BackNavBar from "../components/BackNavBar";
+import {TextInput } from "react-native";
 
-export default function StuGrad() {
+
+export default function RecCom() {
   const navigation = useNavigation();
 
   return (
@@ -28,16 +28,17 @@ export default function StuGrad() {
                 onPress={() => navigation.navigate("Student/Recruiter")}
               ></BackNavBar>
               <View style={styles.centeredItems}>
-                <Text style={styles.text}>What company do you recuite for?</Text>
-                <PromptButton
-                  title="Student"
-                  style={{ marginTop: 50 }}
-                  onPress={() => alert("Hell")}
-                ></PromptButton>
-                <PromptButton
-                  title="Recruiter"
-                  style={{ marginTop: 20 }}
-                ></PromptButton>
+                <Text style={styles.text}>What company do you recruit for?</Text>
+                <TextInput placeholder={"Type in your company"} style={[{
+                  marginBottom: 30,
+                  borderColor: "black",
+                  borderBottomWidth: 1,
+                  fontSize: 20,
+                  width: 300,
+                  textAlign: "center",
+        
+                }]} />
+                <BlueButton secondaryTitle="Next" onPress={() => navigation.navigate("Recruiter Company")}></BlueButton>
               </View>
             </View>
           }
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     textAlign: "center",
+    marginBottom: 150,
   },
 
   wide: {
