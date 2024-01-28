@@ -28,7 +28,17 @@ export default function CreateAccount() {
                   <Text style={styles.signUpText}> Login</Text>
                 </Text>
               </TouchableOpacity>
-              <View style = {{marginTop:30}}>
+              <View style = {{marginTop:25}}>
+              <TextInput
+                style={styles.input}
+                placeholder="First Name"
+                underlineColorAndroid="transparent"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Last Name"
+                underlineColorAndroid="transparent"
+              />
               <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -43,9 +53,16 @@ export default function CreateAccount() {
                 secureTextEntry
                 underlineColorAndroid="transparent"
               />
+              <TextInput
+                style={styles.input}
+                placeholder="Confirm Password"
+  
+                secureTextEntry
+                underlineColorAndroid="transparent"
+              />
               </View>
               <View>
-              <View style = {{marginTop:20, alignItems:'center'}}>
+              <View style = {{marginTop:40, alignItems:'center'}}>
               <BlueButton
                 onPress={handleButtonPress}
                 title="Primary Layer"
@@ -103,7 +120,7 @@ const styles = StyleSheet.create({
       marginBottom: 20,
     },
     centeredButton: {
-      marginTop: 40,
+      marginTop: 45,
       alignItems: 'center',
       justifyContent: 'center',
     }

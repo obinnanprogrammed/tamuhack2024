@@ -28,7 +28,7 @@ export default function Login() {
                 <Text style={styles.signUpText}> Sign up</Text>
               </Text>
             </TouchableOpacity>
-            <View style = {{marginTop:50}}>
+            <View style = {{marginTop:40}}>
             <TextInput
               style={styles.input}
               placeholder="Email"
