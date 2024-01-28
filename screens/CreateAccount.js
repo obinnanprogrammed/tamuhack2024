@@ -164,6 +164,11 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 50,
     borderRadius: 0,
     alignItems: "center",
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      width: 0,
+      height: -4
+    }
   },
   input: {
     height: 40,
