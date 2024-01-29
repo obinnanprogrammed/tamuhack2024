@@ -11,6 +11,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import PalmTree from "../components/PalmTree";
 import BottomNavBar from "../components/BottomNavBar";
 import { useNavigation } from "@react-navigation/native";
+import Header from "../components/Header";
 
 export default function MessagesHome() {
   const navigation = useNavigation();
@@ -111,6 +112,9 @@ export default function MessagesHome() {
           imgSource={require("../assets/palm.png")}
           children={
             <View style={styles.wide}>
+                <Header/>
+                <View style = {{paddingLeft:20, paddingRight:20}}>
+                
               <View style={[styles.centeredItems, styles.bottomBorder]}>
                 <Text style={styles.text1}>Messages</Text>
               </View>
@@ -120,6 +124,7 @@ export default function MessagesHome() {
                 keyExtractor={(item) => item.id}
               />
               <BottomNavBar />
+              </View>
             </View>
           }
         />
@@ -144,16 +149,17 @@ const styles = StyleSheet.create({
   },
 
   text1: {
-    marginTop: 70,
+    marginTop: 0,
     marginBottom: 5,
     color: "#000",
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "bold",
     textAlign: "left",
   },
 
   bottomBorder: {
     borderBottomWidth: 1,
+    marginBottom: 15,
   },
 
   text: {
@@ -166,7 +172,8 @@ const styles = StyleSheet.create({
   },
 
   wide: {
-    padding: 20,
+    padding: 0,
+    paddingTop: 30,
     width: "100%",
     flex: 1,
   },
@@ -175,9 +182,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     padding: 10,
-    borderRadius: 10,
-    backgroundColor: "#ffffff",
-    marginBottom: 10,
+    borderRadius: 25,
+    backgroundColor: "#FFFFFF",
+    marginBottom: 15,
   },
 
   profilePic: {
