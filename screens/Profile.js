@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     // height:
   },
   username: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
   },
