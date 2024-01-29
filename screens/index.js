@@ -26,5 +26,5 @@ export { default as StuGrad } from './StuGrad';
 export { default as StuInterests } from './StuInterests';
 export { default as StuPic } from './StuPic';
 export { default as StuSkill } from './StuSkill';
-export { default as UniAttend } from './UniAttend';
+export { default as StuUni } from './StuUni';
 export { default as Welcome } from './Welcome';

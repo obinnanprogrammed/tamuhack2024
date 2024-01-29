@@ -1,12 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, Alert, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Swipeable } from 'react-native-gesture-handler/Swipeable';
-import firebase from "./firebase";
 import { Chat, CreateAccount, Home, Login, Messages, Profile, RecCompany, 
   RecInternship, RecHome, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
-  StuPic, StuSkill, UniAttend, Welcome } from './screens';
+  StuPic, StuSkill, StuUni, Welcome } from './screens';
 import Notifications from './screens/Notifications';
 
 const Stack = createNativeStackNavigator();
@@ -26,7 +23,7 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Navigator initialRouteName="Student University">
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
@@ -43,7 +40,7 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name="Student Skills" component={StuSkill}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Interests" component={StuInterests}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Student Pic Upload" component={StuPic}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student University" component={UniAttend}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student University" component={StuUni}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Recruiter Company" component={RecCompany}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Recruiter Internships" component={RecInternship}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Recruiter Skills" component={RecSkill}></Stack.Screen>
@@ -51,12 +48,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
