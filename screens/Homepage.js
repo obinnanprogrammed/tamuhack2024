@@ -6,7 +6,9 @@ import Carousel from 'react-native-new-snap-carousel';
 import Header from '../components/Header';
 import BottomNavBar from '../components/BottomNavBar';
 const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 export default function Home() {
+  const carouselHeight = screenHeight - 225;
   return (
     <LinearGradient
       style={{
@@ -61,7 +63,7 @@ export default function Home() {
                     <View
                         style={{
                         backgroundColor: 'floralwhite',
-                        height: 620,
+                        height: carouselHeight,
                         borderRadius: 20,
                         }}
                     >

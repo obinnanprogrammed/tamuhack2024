@@ -22,9 +22,8 @@ export default function Welcome() {
           <View style={styles.centeredItems}>
             <Image
               style={styles.image}
-              source={require("../assets/logo-shadow.png")}
+              source={require("../assets/text_font_logo.png")}
             />
-            <Text style={styles.welcomeText}>Welcome to SwipeTern</Text>
             <View style={styles.button}>
               <TwoLayerButton
                 onPress={handleButtonPress}
@@ -53,17 +52,17 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   welcomeText: {
-    color: "#ffffff",
+    color: "#F0F6E8",
     fontSize: 42,
     fontWeight: "bold",
     textAlign: "center"
   },
 
   image: {
-    width: 150,
-    height: 200,
+    width: 300,
+    height: 300,
     resizeMode: "contain",
-    marginTop: 50,
+    marginTop: 80,
     shadowOpacity: 0.4,
     shadowOffset: {
       width: 0,
