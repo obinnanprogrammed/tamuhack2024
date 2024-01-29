@@ -20,6 +20,7 @@ export { default as RecInternship } from './RecInternship';
 export { default as RecSkill } from './RecSkill';
 export { default as RecHome } from './RecHomepage';
 export { default as Settings } from './Settings';
+export { default as Notifications } from './Notifications';
 export { default as StudentORecruiter } from './StudentORecruiter';
 export { default as StuExp } from './StuExp';
 export { default as StuGrad } from './StuGrad';

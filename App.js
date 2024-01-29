@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Chat, CreateAccount, Home, Login, Messages, Profile, RecCompany, 
-  RecInternship, RecHome, RecSkill, Settings, StudentORecruiter, StuExp, StuGrad, StuInterests,
-  StuPic, StuSkill, StuUni, Welcome } from './screens';
-import Notifications from './screens/Notifications';
+import * as Screen from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,26 +21,26 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Student University">
-        <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Login" component={Login}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Create Account" component={CreateAccount}></Stack.Screen> 
-        <Stack.Screen options={{ headerShown: false }} name="Messages" component={Messages}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Profile" component={Profile}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Chat" component={Chat}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Home" component={Home}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Rec Home" component={RecHome}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Settings" component={Settings}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Notifications" component={Notifications}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student/Recruiter" component={StudentORecruiter}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student Experience" component={StuExp}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student Grad Date" component={StuGrad}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student Skills" component={StuSkill}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student Interests" component={StuInterests}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student Pic Upload" component={StuPic}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Student University" component={StuUni}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Recruiter Company" component={RecCompany}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Recruiter Internships" component={RecInternship}></Stack.Screen>
-        <Stack.Screen options={{ headerShown: false }} name="Recruiter Skills" component={RecSkill}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Screen.Welcome}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Login" component={Screen.Login}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Create Account" component={Screen.CreateAccount}></Stack.Screen> 
+        <Stack.Screen options={{ headerShown: false }} name="Messages" component={Screen.Messages}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Profile" component={Screen.Profile}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Chat" component={Screen.Chat}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Home" component={Screen.Home}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Rec Home" component={Screen.RecHome}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Settings" component={Screen.Settings}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Notifications" component={Screen.Notifications}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student/Recruiter" component={Screen.StudentORecruiter}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student Experience" component={Screen.StuExp}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student Grad Date" component={Screen.StuGrad}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student Skills" component={Screen.StuSkill}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student Interests" component={Screen.StuInterests}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student Pic Upload" component={Screen.StuPic}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Student University" component={Screen.StuUni}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Recruiter Company" component={Screen.RecCompany}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Recruiter Internships" component={Screen.RecInternship}></Stack.Screen>
+        <Stack.Screen options={{ headerShown: false }} name="Recruiter Skills" component={Screen.RecSkill}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
