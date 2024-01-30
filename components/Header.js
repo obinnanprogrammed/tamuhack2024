@@ -6,8 +6,11 @@ export default function Header() {
   const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Amaranth_700Bold,
-    Amaranth_400Regular,
+
   });
+  if (!fontsLoaded) {
+    return null; // or some loading indicator
+  }
 
   const openSettings = () => {
     navigation.navigate("Settings");

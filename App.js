@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as Screen from './screens';
-
+import firebase from "./firebase";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Student University">
+      <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Screen.Welcome}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Screen.Login}></Stack.Screen>
         <Stack.Screen options={{ headerShown: false }} name="Create Account" component={Screen.CreateAccount}></Stack.Screen> 

@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     paddingHorizontal: 20,
     color: "#000",
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "bold",
     textAlign: "center",
   },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
 
   majorText: {
     color: "#000",
-    fontSize: 24,
+    fontSize: 35,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 30,
