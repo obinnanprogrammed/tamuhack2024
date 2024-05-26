@@ -14,10 +14,9 @@ import { useNavigation } from "@react-navigation/native";
 import BlueButton from "../components/BlueButton";
 import {
     getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword
 } from "firebase/auth";
-import { supabase } from "../lib/supabase";
+import { auth } from "../firebase.js";
 
 export default function CreateAccount() {
   const navigation = useNavigation();
@@ -28,38 +27,23 @@ export default function CreateAccount() {
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const handleButtonPress = async () => {
+    // Firebase authentication
     try {
-      // Firebase authentication
-      const auth = getAuth();
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-    
-      // Supabase integration
-      const { data, error } = await supabase
-        .from('users')
-        .upsert([
-          {
-            email,
-            firstName,
-            lastName,  // Use Firebase UID as userId
-            user_id: user.uid,
-          },
-        ]);
-
-      if (error) {
-        console.error('Error inserting data into Supabase:', error.message);
-      } else {
-        console.log('Data inserted into Supabase successfully:', data);
-        // Optionally, you can automatically sign in the user after account creation
-        await signInWithEmailAndPassword(auth, email, password);
-        navigation.navigate('Student/Recruiter');
-      }
-    } catch (error) {
-      console.error('Account creation error:', error.message);
-      // Handle error, e.g., show error message
+      createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        const user = userCredential.user;
+        console.log("Successfully signed up");
+        let objProps = {
+          email: email
+        }
+        navigation.navigate("Student/Recruiter", objProps);
+      }).catch((error) => {
+        console.log(error.code, error.message);
+      });
+    } catch(error) {
+      console.log("Error detected: ", error.message);
     }
   };
-  const handleToSignupPress = () => {
+  const handleToLoginPress = () => {
     // Your button press logic goes here
     navigation.navigate("Login");
   };
@@ -79,7 +63,7 @@ export default function CreateAccount() {
               <View style={styles.whitePart}>
                 <View>
                   <Text style={styles.loginText}>Create An Account</Text>
-                  <TouchableOpacity onPress={handleToSignupPress}>
+                  <TouchableOpacity onPress={handleToLoginPress}>
                     <Text style={styles.dontHaveAccountText}>
                       Already have an account?
                       <Text style={styles.signUpText}> Login</Text>

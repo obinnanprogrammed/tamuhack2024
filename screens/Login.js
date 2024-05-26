@@ -13,6 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import BlueButton from "../components/BlueButton";
 import { TouchableWithoutFeedback } from "react-native";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.js";
 
 export default function Login() {
   const navigation = useNavigation();
@@ -20,8 +21,6 @@ export default function Login() {
   const [password, setPassword] = React.useState("");
   const handleButtonPress = async () => {
     try {
-      const auth = getAuth();
-
       // Sign in user
       const userCredential = await signInWithEmailAndPassword(
         auth,
