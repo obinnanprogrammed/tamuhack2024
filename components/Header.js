@@ -1,16 +1,15 @@
 import { StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Amaranth_400Regular, Amaranth_700Bold } from '@expo-google-fonts/amaranth';
+//import { useFonts, Amaranth_700Bold } from '@expo-google-fonts/amaranth';
 import { useFonts } from 'expo-font';
 export default function Header() {
   const navigation = useNavigation();
-  let [fontsLoaded] = useFonts({
-    Amaranth_700Bold,
-
+  const [fontsLoaded] = useFonts({
+    'Amaranth-Bold': require('../assets/fonts/Amaranth-Bold.ttf'),
   });
-  if (!fontsLoaded) {
-    return null; // or some loading indicator
-  }
+  // if (!fontsLoaded) {
+  //   return null; // or some loading indicator
+  // }
 
   const openSettings = () => {
     navigation.navigate("Settings");
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
       marginBottom: 20,
     },
     headerText: {
-      fontFamily: 'Amaranth_700Bold',
+      fontFamily: 'Amaranth-Bold',
       fontSize: 30,
       fontWeight:'400',
       marginRight: 110
