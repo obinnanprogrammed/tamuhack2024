@@ -6,7 +6,8 @@ import Carousel from 'react-native-new-snap-carousel';
 import Header from '../components/Header';
 import BottomNavBar from '../components/BottomNavBar';
 const screenWidth = Dimensions.get('window').width;
-export default function RecHome() {
+export default function RecHome({ route }) {
+  const { email, firstName, lastName } = route.params;
   return (
     <LinearGradient
       style={{

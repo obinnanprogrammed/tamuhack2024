@@ -8,15 +8,25 @@ import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 import MultiSelect from "../components/MultiSelect";
 
-export default function RecSkills() {
+export default function RecSkills({ route }) {
   const navigation = useNavigation();
+  const [languages, setLanguages] = useState(["Java", "C++", "C#", "Python"]);
+  const [libraries, setLibraries] = useState(["pandas", "Spring Boot"]);
+  const [devTools, setDevTools] = useState(["Git", "Docker", "CI/CD"]);
+
+  const { email, firstName, lastName, company } = route.params;
   const handleInput = () => {
-    navigation.navigate("Recruiter Internships");
+    navigation.navigate("Recruiter Internships", { 
+      email: email, 
+      firstName: firstName,
+      lastName: lastName,
+      company: company, 
+      languages: languages,
+      libraries: libraries,
+      devTools: devTools });
   };
 
-  const [languages, setLanguages] = useState([])
-  const [libraries, setLibraries] = useState([])
-  const [devTools, setDevTools] = useState([])
+  
   
   return (
     <View style={styles.component}>

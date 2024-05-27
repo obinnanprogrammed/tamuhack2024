@@ -13,10 +13,17 @@ import BackNavBar from "../components/BackNavBar";
 import {TextInput } from "react-native";
 
 
-export default function RecCom() {
+export default function RecCom({ route }) {
   const navigation = useNavigation();
+  const [company, setCompany] = useState("");
+
+  const { email, firstName, lastName } = route.params;
   const handleInput = () => {
-    navigation.navigate("Recruiter Skills");
+    navigation.navigate("Recruiter Skills", { 
+      email: email, 
+      firstName: firstName, 
+      lastName: lastName, 
+      company: company });
   };
 
   return (
@@ -40,8 +47,8 @@ export default function RecCom() {
                   width: 300,
                   textAlign: "center",
         
-                }]} />
-                <BlueButton secondaryTitle="Next" onPress={() => handleInput()}></BlueButton>
+                }]} onChangeText={(text) => setCompany(text)}/>
+                <BlueButton secondaryTitle="Next" onPress={handleInput}></BlueButton>
               </View>
             </View>
           }

@@ -7,17 +7,49 @@ import { LinearGradient } from "expo-linear-gradient";
 import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 import MultiSelect from "../components/MultiSelect";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
-export default function StuExp() {
+export default function StuExp({ route }) {
   const navigation = useNavigation();
-  const handleInput = () => {
-    navigation.navigate("Home");
+  const [locations, setLocations] = useState(["Houston", "Jackson", "Albany"])
+  const [roles, setRoles] = useState(["CEO", "Software Developer", "AI Engineer"])
+  const { email, firstName, lastName, university, major, startMonth, 
+    startYear, gradMonth, gradYear, experience, languages, libraries, devTools } = route.params;
+  
+  const handleInput = async () => {
+    try {
+      const accountProps = {
+        devtools: devTools,
+        email: email,
+        experience: experience,
+        firstName: firstName,
+        gradMonth: gradMonth,
+        gradYear: gradYear,
+        languages: languages,
+        lastName: lastName,
+        libraries: libraries,
+        locations: locations,
+        major: major,
+        roles: roles,
+        startMonth: startMonth,
+        startYear: startYear,
+        university: university
+      };
+      const doc = await addDoc(collection(db, "students"), accountProps);
+      console.log("Document successfully written with ID", doc.id);
+      navigation.navigate("Home", {
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        status: "student"
+      });
+    } catch(error) {
+      console.error("Error adding document: ", error)
+    }
+    
   };
 
-  // THESE ARE TESTS ARRAYS, IMPLEMENT DATABASE PLS <3
-  const [locations, setLocations] = useState([])
-  const [roles, setRoles] = useState([])
-  
   return (
     <View style={styles.component}>
       <LinearGradient style={styles.gradient} colors={["#F0F6E8", "#F2DDC3"]}>

@@ -12,8 +12,8 @@ import PalmTree from "../components/PalmTree";
 import { useNavigation } from "@react-navigation/native";
 import BlueButton from "../components/BlueButton";
 import { TouchableWithoutFeedback } from "react-native";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase.js";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 export default function Login() {
   const navigation = useNavigation();

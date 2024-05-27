@@ -11,19 +11,20 @@ import TwoLayerButton from "../components/Button";
 import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 
-export default function StudentORecruiter() {
+export default function StudentORecruiter({ route }) {
   const navigation = useNavigation();
   const [selected, setSelected] = useState(0);
-
+  const { email, firstName, lastName } = route.params;
+  
   const submitUserType = () => {
     switch (selected) {
       case 0:
         return;
       case 1:
-        navigation.navigate("Student University");
+        navigation.navigate("Student University", { email: email, firstName: firstName, lastName: lastName });
         break;
       case 2:
-        navigation.navigate("Recruiter Company")
+        navigation.navigate("Recruiter Company", { email: email, firstName: firstName, lastName: lastName })
         break;
     }
 

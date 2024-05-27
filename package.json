@@ -20,7 +20,7 @@
     "expo-google-fonts": "^0.0.0",
     "expo-linear-gradient": "^12.7.1",
     "expo-status-bar": "~1.11.1",
-    "firebase": "^10.7.2",
+    "firebase": "^10.12.1",
     "react": "18.2.0",
     "react-native": "0.73.2",
     "react-native-dotenv": "^3.4.11",

@@ -16,19 +16,21 @@ import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 import { Keyboard } from "react-native";
 
-export default function UniAttend() {
+export default function UniAttend({ route }) {
   const navigation = useNavigation();
   const [university, setUniversity] = useState("");
   const [major, setMajor] = useState("");
-
+  
+  const { email, firstName, lastName } = route.params;
   // Handle database stuff here
   const handleUniversityInput = () => {
-    // Grab university and major here
+    navigation.navigate("Student Grad Date", { 
+      email: email, 
+      firstName: firstName, 
+      lastName: lastName, 
+      university: university, 
+      major: major });
   };
-
-  useEffect(() => {
-    handleUniversityInput();
-  }, [university, major])
 
   return (
     <View style={styles.component}>
@@ -64,7 +66,7 @@ export default function UniAttend() {
                   <View style={{ paddingTop: 40 }}>
                     <BlueButton
                       secondaryTitle="Next"
-                      onPress={() => navigation.navigate("Student Grad Date")}
+                      onPress={handleUniversityInput}
                     ></BlueButton>
                   </View>
                 </View>

@@ -16,20 +16,66 @@ import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 import { useState } from "react";
 
-export default function StuGrad() {
+export default function StuGrad({ route }) {
   const navigation = useNavigation();
+  const [sMonth, setSMonth] = useState(1);
+  const [sYear, setSYear] = useState(1900);
+  const [gMonth, setGMonth] = useState(1);
+  const [gYear, setGYear] = useState(2001);
   const [message, setMessage] = useState("");
-  const [sMonth, setSMonth] = useState();
-  const [sYear, setSYear] = useState();
-  const [gMonth, setGMonth] = useState();
-  const [gYear, setGYear] = useState();
+  const { email, firstName, lastName, university, major } = route.params;
 
   const validateInput = (text, id) => {
-    
+    switch(id) {
+      case 1:
+        if(text < 1 || text > 12) {
+          setMessage("Month must be between January (1) and December (12).");
+        } else {
+          setMessage("");
+          setSMonth(text);
+        }
+      case 2:
+        if(text < 1900) {
+          setMessage("You cannot have possibly started that early.");
+        } else if(text > 2024) {
+          setMessage("Dude, we are not time traveling.");
+        } else {
+          setMessage("");
+          setSYear(text);
+        }
+      case 3:
+        if(text < 1 || text > 12) {
+          setMessage("Month must be between January (1) and December (12).")
+        } else if(text < sMonth && sYear === gYear) {
+          setMessage("Graduation date cannot be before start date.")
+        } else {
+          setMessage("");
+          setGMonth(text);
+        }
+      case 4:
+        if(text < 1900) {
+          setMessage("You cannot have possibly started that early.");
+        } else if(text < sYear) {
+          setMessage("Graduation date cannot be before start date.");
+        } else {
+          setMessage("");
+          setGYear(text);
+        }
+    }
   };
 
   const handleInput = () => {
-    navigation.navigate("Student Experience");
+    navigation.navigate("Student Experience", {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      university: university,
+      major: major,
+      startMonth: sMonth,
+      startYear: sYear,
+      gradMonth: gMonth,
+      gradYear: gYear
+    });
   };
 
   return (
@@ -120,7 +166,7 @@ export default function StuGrad() {
                   <View style={{ paddingTop: 40 }}>
                     <BlueButton
                       secondaryTitle="Next"
-                      onPress={() => handleInput()}
+                      onPress={handleInput}
                     ></BlueButton>
                   </View>
                 </View>

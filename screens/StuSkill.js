@@ -8,16 +8,30 @@ import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 import MultiSelect from "../components/MultiSelect";
 
-export default function StuExp() {
+export default function StuExp({ route }) {
   const navigation = useNavigation();
+  const [languages, setLanguages] = useState(["HTML", "CSS", "JavaScript", "F#", "BF", "C", "R"])
+  const [libraries, setLibraries] = useState(["React", "Next", "Node.js", "Tailwind"])
+  const [devTools, setDevTools] = useState(["VSCode", "Linux"])
+  const { email, firstName, lastName, university, major, 
+    startMonth, startYear, gradMonth, gradYear, experience } = route.params;
   const handleInput = () => {
-    navigation.navigate("Student Interests");
+    navigation.navigate("Student Interests", {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      university: university,
+      major: major,
+      startMonth: startMonth,
+      startYear: startYear,
+      gradMonth: gradMonth,
+      gradYear: gradYear,
+      experience: experience,
+      languages: languages,
+      libraries: libraries,
+      devTools: devTools
+    });
   };
-
-  // THESE ARE TESTS ARRAYS, IMPLEMENT DATABASE PLS <3
-  const [languages, setLanguages] = useState([])
-  const [libraries, setLibraries] = useState([])
-  const [devTools, setDevTools] = useState([])
   
   return (
     <View style={styles.component}>

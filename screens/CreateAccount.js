@@ -12,11 +12,8 @@ import {
 import PalmTree from "../components/PalmTree";
 import { useNavigation } from "@react-navigation/native";
 import BlueButton from "../components/BlueButton";
-import {
-    getAuth,
-    createUserWithEmailAndPassword
-} from "firebase/auth";
-import { auth } from "../firebase.js";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 export default function CreateAccount() {
   const navigation = useNavigation();
@@ -32,10 +29,8 @@ export default function CreateAccount() {
       createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
         const user = userCredential.user;
         console.log("Successfully signed up");
-        let objProps = {
-          email: email
-        }
-        navigation.navigate("Student/Recruiter", objProps);
+
+        navigation.navigate("Student/Recruiter", { email: email, firstName: firstName, lastName: lastName });
       }).catch((error) => {
         console.log(error.code, error.message);
       });

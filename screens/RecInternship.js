@@ -7,16 +7,36 @@ import { LinearGradient } from "expo-linear-gradient";
 import BackNavBar from "../components/BackNavBar";
 import BlueButton from "../components/BlueButton";
 import MultiSelect from "../components/MultiSelect";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
-export default function RecInternship() {
+export default function RecInternship({ route }) {
   const navigation = useNavigation();
-  const handleInput = () => {
-    navigation.navigate("Rec Home");
+  const [locations, setLocations] = useState(["Houston", "Carson City", "Remote"])
+  const [roles, setRoles] = useState(["Scrum Master", "Backend", "Frontend", "Coffee Handler"])
+  const { email, firstName, lastName, company, languages, libraries, devTools } = route.params;
+  
+  const handleInput = async () => {
+    try {
+      const accountProps = {
+        company: company,
+        devtools: devTools,
+        email: email,
+        firstName: firstName,
+        languages: languages,
+        lastName: lastName,
+        libraries: libraries,
+        locations: locations,
+        roles: roles
+      }
+      const doc = await addDoc(collection(db, "recruiters"), accountProps);
+      console.log("Document successfully written with ID ", doc.id);
+      navigation.navigate("Rec Home", { email: email, firstName: firstName, lastName: lastName });
+    } catch(error) {
+      console.error("Error adding document: ", error);
+    }
+    
   };
-
-  // THESE ARE TESTS ARRAYS, IMPLEMENT DATABASE PLS <3
-  const [locations, setLocations] = useState([])
-  const [roles, setRoles] = useState([])
   
   return (
     <View style={styles.component}>
@@ -39,7 +59,7 @@ export default function RecInternship() {
                 <View style={{ paddingTop: 40 }}>
                   <BlueButton
                     secondaryTitle="Next"
-                    onPress={() => handleInput()}
+                    onPress={handleInput}
                   ></BlueButton>
                 </View>
               </View>

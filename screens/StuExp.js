@@ -10,14 +10,28 @@ import SkillField from "../components/SkillField";
 import AddSkillDialog from "../components/AddSkillDialog";
 import AddButton from "../components/AddButton";
 
-export default function StuExp() {
+export default function StuExp({ route }) {
   const navigation = useNavigation();
-  const handleInput = () => {
-    navigation.navigate("Student Skills");
-  };
   const [experience, setExperience] = useState([
     { title: "Google", start: "2024-01-01", end: "2024-03-01", id: 0 },
   ]);
+  const { email, firstName, lastName, university, 
+    major, startMonth, startYear, gradMonth, gradYear } = route.params;
+  const handleInput = () => {
+    navigation.navigate("Student Skills", {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      university: university,
+      major: major,
+      startMonth: startMonth,
+      startYear: startYear,
+      gradMonth: gradMonth,
+      gradYear: gradYear,
+      experience: experience
+    });
+  };
+  
 
   const [isAdding, setIsAdding] = useState(false);
 
@@ -26,7 +40,7 @@ export default function StuExp() {
   };
 
   const addExperience = (title, start, end) => {
-    newObject = { title: title, start: start, end: end };
+    newObject = { title: title, start: start, end: end, id: experience.length-1 };
     setExperience((objects) => [...objects, newObject]);
     setIsAdding(false);
   };
@@ -90,7 +104,7 @@ export default function StuExp() {
                 <View style={{ paddingTop: 40 }}>
                   <BlueButton
                     secondaryTitle="Next"
-                    onPress={() => handleInput()}
+                    onPress={handleInput}
                     off={isAdding}
                   ></BlueButton>
                 </View>
