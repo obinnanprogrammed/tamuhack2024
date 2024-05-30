@@ -1,15 +1,7 @@
 import { StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-//import { useFonts, Amaranth_700Bold } from '@expo-google-fonts/amaranth';
-import { useFonts } from 'expo-font';
 export default function Header() {
   const navigation = useNavigation();
-  const [fontsLoaded] = useFonts({
-    'Amaranth-Bold': require('../assets/fonts/Amaranth-Bold.ttf'),
-  });
-  // if (!fontsLoaded) {
-  //   return null; // or some loading indicator
-  // }
 
   const openSettings = () => {
     navigation.navigate("Settings");
@@ -21,7 +13,11 @@ export default function Header() {
 
     return(
         <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>SwipeTern</Text>
+          <Image 
+            source = {require('../assets/swipetern-text.png')}
+            style = {styles.headerText}
+          />
+          <View style = {styles.iconsContainer}>
           <TouchableOpacity onPress={() => openNotifications()}>
             <Image
               source={require('../assets/Bell.png')}
@@ -34,6 +30,7 @@ export default function Header() {
               style={styles.settingsIcon}
             />
           </TouchableOpacity>
+          </View>
         </View>
     )
 }
@@ -50,11 +47,13 @@ const styles = StyleSheet.create({
       marginTop: 20,
       marginBottom: 20,
     },
+    iconsContainer:{
+      flexDirection: 'row',
+      gap:10,
+    },
     headerText: {
-      fontFamily: 'Amaranth-Bold',
-      fontSize: 30,
-      fontWeight:'400',
-      marginRight: 110
+      width: 144,
+      height: 32,
     },
     settingsIcon: {
       width: 40,
